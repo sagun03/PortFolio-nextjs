@@ -16,6 +16,8 @@ import { useState } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import { InputBase } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const CustomAppBar = styled(AppBar)(({ theme }) => ({
@@ -35,9 +37,12 @@ const Search = styled('div')(({ theme }) => ({
   '&:hover': {
     backgroundColor: alpha(theme.palette.common?.white, 0.25),
   },
+  display: 'none',
   marginLeft: 0,
+  marginRight: 12,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
+    display: 'flex',
     marginLeft: theme.spacing(1),
     width: 'auto',
   },
@@ -62,9 +67,9 @@ const StyledInputBase = styled(InputBase)(({ theme }: { theme: any}) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+      width: '22ch',
       '&:focus': {
-        width: '20ch',
+        width: '32ch',
       },
     },
   },
@@ -73,6 +78,7 @@ const StyledInputBase = styled(InputBase)(({ theme }: { theme: any}) => ({
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
+  const [fav, setFav] = useState(false);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -172,6 +178,16 @@ function NavBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
+          <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-haspopup="true"
+              onClick={() => setFav(fav => !fav)}
+              color="inherit"
+              style={{ marginRight: 12 }}
+            >
+             {fav ? <StarIcon /> : <StarBorderIcon />}
+            </IconButton>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
