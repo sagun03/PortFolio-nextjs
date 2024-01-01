@@ -1,16 +1,23 @@
 import Footer from "./Footer";
+import LeftSection from "./LeftSection";
+import MidSection from "./MidSection";
 import NavBar from "./NavBar";
+import RightSection from "./RightSection";
 
 interface AppLayoutProps {
   children: React.ReactNode;
 }
 
-const AppLayout = ({children}: AppLayoutProps) => {
+const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <>
       <NavBar />
-      {children}
-      <Footer />
+      <main className="flex">
+      <RightSection />
+      <MidSection> {children} <Footer /> </MidSection>
+      <LeftSection />
+      </main>
+      
     </>
   );
 };
