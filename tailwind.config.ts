@@ -15,9 +15,9 @@ const config: Config = {
       },
     },
     flex: {
-      'custom1': '1',
+      'custom1': '.7',
       'custom2': '2',
-    }
+    },
     
   },
   plugins: [],

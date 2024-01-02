@@ -12,7 +12,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <>
       <NavBar />
-      <main className="flex">
+      <main className="flex h-full" style={{height: "calc(100vh - 4rem)"}}>
       <RightSection />
       <MidSection> {children} <Footer /> </MidSection>
       <LeftSection />
