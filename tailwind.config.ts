@@ -13,11 +13,15 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      flex: {
+        'custom1': '.7',
+        'custom2': '2',
+      },
+      backgroundColor: {
+        'primary': '#0E1117',
+       }
     },
-    flex: {
-      'custom1': '.7',
-      'custom2': '2',
-    },
+    
     
   },
   plugins: [],
