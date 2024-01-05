@@ -41,9 +41,9 @@ const CutomTab = styled(Tabs)(({ theme }) => ({
     marginRight: "14px",
     textTransform: "none",
     transition: "transform 0.3s, box-shadow 0.3s",
+    minHeight: '60px',
     "&:hover": {
       backgroundColor: "rgb(16, 19, 26)",
-      cursor: "pointer",
       borderRadius: "10px",
       transform: "scale(1.03)",
     },
@@ -277,8 +277,8 @@ const NavBar = () => {
             onChange={(e, v) => handleChange(v)}
             centered
           >
-            {tabs.map(({ key, value }) => (
-              <Tab key={value} label={key} value={value} />
+            {tabs.map(({ key, value, Icon }) => (
+              <Tab key={value} label={key} value={value} icon={<Icon />} iconPosition="start" />
             ))}
           </CutomTab>
         </Box>
