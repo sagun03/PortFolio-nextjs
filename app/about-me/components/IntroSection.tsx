@@ -10,7 +10,7 @@ const IntroSection = () => {
           Hey there! I'm Sagun Saluja, a passionate Software Developer based in
           Mississauga, Ontario.{" "}
         </p>
-        <p className="text-base">
+        <p className="text-base font-light">
           <span role="img" aria-label="Rocket">
             🚀
           </span>{" "}
