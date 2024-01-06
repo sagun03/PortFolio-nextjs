@@ -1,9 +1,13 @@
-import Image from "next/image";
+import IntroSection from "./components/IntroSection";
+import Experience from "./components/Experience";
 
-export default function AboutMe() {
+const AboutMe = () => {
   return (
-    <main className="flex">
-      About Me
+    <main className="flex flex-col items-center justify-center text-white ">
+      <IntroSection />
+      <Experience />
     </main>
   );
-}
+};
+
+export default AboutMe;

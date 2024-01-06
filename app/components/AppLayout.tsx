@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { RecoilRoot } from "recoil";
 import Footer from "./Footer";
 import MidSection from "./MidSection";
@@ -19,10 +19,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
           style={{ height: "calc(100vh - 7rem)" }}
         >
           <RightSection />
-          <MidSection>
-            {children} 
-            <Footer />
-          </MidSection>
+          <MidSection>{children}</MidSection>
           {/* <LeftSection /> */}
         </main>
       </RecoilRoot>
