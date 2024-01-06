@@ -20,12 +20,10 @@ const RightSection = () => {
           </div>
           <div className="mt-2 justify-items-start w-full">
             <p className="text-sm">
-              👋 I'm a passionate Software Developer
-              deeply enthusiastic about React (However, this portfolio is built in next js ✨). 💻 I bring over 4 years of
-              dedicated experience in web development, specializing in crafting
-              captivating and highly responsive user interfaces.
+              👋 I'm a passionate Software Developer with 4+ years of
+              dedicated experience deeply enthusiastic about React (However, this portfolio is built in next js ✨)
             </p>
-            <div className="py-3">
+            <div className="py-3 mt-2">
             <SocialMediaLinks />
             </div>
           </div>

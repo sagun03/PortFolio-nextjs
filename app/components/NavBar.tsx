@@ -161,7 +161,7 @@ const NavBar = () => {
         router.push(`/${v}`)
       }
       
-    }, 1000);
+    }, 400);
   };
   return (
     <nav className="border-b border-gray-700 h-30">
@@ -188,7 +188,7 @@ const NavBar = () => {
               variant="h6"
               noWrap
               component="a"
-              href="/"
+              href="/about-me"
               sx={{
                 mr: 2,
                 flexGrow: 1,
@@ -222,7 +222,7 @@ const NavBar = () => {
               variant="h5"
               noWrap
               component="a"
-              href="/"
+              href="/about-me"
               sx={{
                 mr: 1,
                 display: { xs: "flex", md: "none" },

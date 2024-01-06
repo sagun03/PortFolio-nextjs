@@ -12,9 +12,9 @@ export default function LinearDeterminate() {
           return 0;
         }
 
-        return oldProgress + 10;
+        return oldProgress + 25;
       });
-    }, 100);
+    }, 50);
 
     return () => {
       clearInterval(timer);
