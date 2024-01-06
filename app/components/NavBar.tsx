@@ -30,24 +30,31 @@ const CustomAppBar = styled(AppBar)(({ theme }) => ({
     paddingLeft: "12px",
   },
   "& .MuiToolbar-root": {
-    minHeight: "64px", // Center align items in the toolbar
+    minHeight: "60px", // Center align items in the toolbar
   },
 }));
 const activeColor = "#F78066";
 const CutomTab = styled(Tabs)(({ theme }) => ({
+  minHeight: '42px',
+  "& .MuiTabs-scroller": {
+    height: '44px',
+  },
   "& .MuiTab-root": {
     color: "white",
-    height: "38px",
+    height: "28px",
     padding: "8px 10px",
     marginRight: "14px",
     textTransform: "none",
     transition: "transform 0.3s, box-shadow 0.3s",
-    minHeight: '60px',
+    minHeight: '34px',
     "&:hover": {
       backgroundColor: "rgb(16, 19, 26)",
       borderRadius: "10px",
       transform: "scale(1.03)",
     },
+  },
+  "& .MuiSvgIcon-root": {
+    height: '1.25rem'
   },
   "& .Mui-selected": {
     color: "white !important",
@@ -294,7 +301,7 @@ const NavBar = () => {
             centered
           >
             {tabs.map(({ key, value, Icon, href }) => (
-              <Tab key={value} label={key} value={value} icon={<Icon />} iconPosition="start" />
+              <Tab className="text-sm" key={value} label={key} value={value} icon={<Icon />} iconPosition="start" />
             ))}
           </CutomTab>
         </Box>
