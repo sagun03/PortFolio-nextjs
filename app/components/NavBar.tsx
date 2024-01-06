@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import ImportantDevicesIcon from "@mui/icons-material/ImportantDevices";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import { InputBase, LinearProgress, Tab, Tabs } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
@@ -21,6 +21,7 @@ import { tabs } from "./constants";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { tabsState } from "../store/atoms/tabs";
 import LinearDeterminate from "./LinerProgreeBar";
+import { useRouter } from 'next/navigation'
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const CustomAppBar = styled(AppBar)(({ theme }) => ({
@@ -107,6 +108,17 @@ const NavBar = () => {
   const [fav, setFav] = useState(false);
   const setTab = useSetRecoilState(tabsState);
   const tabState = useRecoilValue(tabsState);
+  let router = useRouter()
+
+  useEffect(() => {
+    if (typeof window !== 'undefined'){
+    const path = window.location.pathname.split('/').slice(1).shift();
+    setTab({
+      isLoading: false,
+      activeTab: path,
+    })
+    }
+  }, [])
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -138,6 +150,10 @@ const NavBar = () => {
         isLoading: false,
         activeTab: v,
       });
+      if (typeof window !== 'undefined' && router) {
+        router.push(`/${v}`)
+      }
+      
     }, 1000);
   };
   return (
@@ -277,7 +293,7 @@ const NavBar = () => {
             onChange={(e, v) => handleChange(v)}
             centered
           >
-            {tabs.map(({ key, value, Icon }) => (
+            {tabs.map(({ key, value, Icon, href }) => (
               <Tab key={value} label={key} value={value} icon={<Icon />} iconPosition="start" />
             ))}
           </CutomTab>

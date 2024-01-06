@@ -8,32 +8,38 @@ import ContactMailIcon from "@mui/icons-material/ContactMail";
 export const tabs = [
   {
     key: "About Me",
-    value: "aboutMe",
+    value: "about-me",
     Icon: MenuBookIcon,
+    href: '/about-me'
   },
   {
     key: "Skills",
     value: "skills",
     Icon: SettingsEthernetIcon,
+    href: '/skills'
   },
   {
     key: "Projects",
     value: "projects",
     Icon: SpaceDashboardIcon,
+    href: '/projects'
   },
   {
     key: "Repositories",
     value: "repo",
     Icon: LanIcon,
+    href: '/repo'
   },
   {
     key: "Resume",
     value: "resume",
     Icon: DescriptionIcon,
+    href: '/resume'
   },
   {
-    key: "Contact",
+    key: "Contact Me",
     value: "contact",
     Icon: ContactMailIcon,
+    href: '/contact'
   },
 ];
