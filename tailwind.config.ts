@@ -14,7 +14,7 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       flex: {
-        'custom1': '.9',
+        'custom1': '.7',
         'custom2': '2',
       },
       backgroundColor: {

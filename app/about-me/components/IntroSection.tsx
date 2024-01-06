@@ -1,7 +1,7 @@
 const IntroSection = () => {
   return (
     <section className="bg-gray-900 rounded-lg shadow-md p-8 mb-6">
-      <div className="text-base">
+      <div className="text-lg">
         {/* Introduction */}
         <p className="mb-4">
           <span role="img" aria-label="Wave">
@@ -10,13 +10,13 @@ const IntroSection = () => {
           Hey there! I'm Sagun Saluja, a passionate Software Developer based in
           Mississauga, Ontario.{" "}
         </p>
-        <p className="text-sm">
+        <p className="text-base">
           <span role="img" aria-label="Rocket">
             🚀
           </span>{" "}
           My tech odyssey began during my Btech years when coding was just a
           distant concept. However, everything changed during my final
-          sstrongester internship at{" "}
+          semester internship at{" "}
           <strong className="text-primary">Smalt and Beryl</strong>, where{" "}
           <strong className="text-primary">Angular</strong> became my gateway to
           the world of programming. 🌐 That pivotal experience ignited a fervent
