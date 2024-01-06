@@ -7,9 +7,9 @@ const Rating = ({ rating }: {rating: number}) => {
 
   const stars = Array.from({ length: 5 }, (_, index) => {
     if (index < filledStars) {
-      return <Star key={index} className="star" />;
+      return <Star key={index} className="star text-rating" />;
     } else if (index === filledStars && hasHalfStar) {
-      return <StarHalf key={index} className="star" />;
+      return <StarHalf key={index} className="star text-rating" />;
     } else {
       return <StarBorder key={index} className="star" />;
     }

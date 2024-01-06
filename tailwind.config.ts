@@ -21,7 +21,8 @@ const config: Config = {
         'primary': '#0E1117',
        },
        textColor: {
-        'primary': '#F78066'
+        'primary': '#F78066',
+        'rating': '#FAAF00'
        }
     },
     

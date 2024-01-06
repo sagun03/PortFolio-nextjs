@@ -15,8 +15,8 @@ const IntroSection = () => {
             🚀
           </span>{" "}
           My tech odyssey began during my Btech years when coding was just a
-          distant concept. However, everything changed during my final
-          semester internship at{" "}
+          distant concept. However, everything changed during my final semester
+          internship at{" "}
           <strong className="text-primary">Smalt and Beryl</strong>, where{" "}
           <strong className="text-primary">Angular</strong> became my gateway to
           the world of programming. 🌐 That pivotal experience ignited a fervent
