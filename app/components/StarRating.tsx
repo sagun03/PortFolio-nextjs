@@ -1,7 +1,7 @@
 import React from 'react';
 import { Star, StarHalf, StarBorder } from '@mui/icons-material';
 
-const Rating = ({ rating }: {rating: number}) => {
+const Rating = ({ rating, className }: {rating: number, className?: string}) => {
   const filledStars = Math.floor(rating); // Get the integer part of the rating
   const hasHalfStar = rating - filledStars >= 0.5; // Check if there is a half star
 
@@ -16,7 +16,7 @@ const Rating = ({ rating }: {rating: number}) => {
   });
 
   return (
-    <div className="rating">
+    <div className={`rating ${className}`}>
       {stars}
     </div>
   );

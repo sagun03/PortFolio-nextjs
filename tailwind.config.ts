@@ -23,6 +23,9 @@ const config: Config = {
        textColor: {
         'primary': '#F78066',
         'rating': '#FAAF00'
+       },
+       maxWidth: {
+        'min': '16rem'
        }
     },
     

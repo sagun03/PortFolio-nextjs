@@ -3,19 +3,26 @@ import Rating from "@/app/components/StarRating";
 
 const SkillCard = ({ skill }: { skill: any }) => {
   return (
-    <div className="bg-gray-800 p-4 rounded-lg shadow-md mb-6">
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center">
+    <div className="bg-primary border border-gray-700 p-4 justify-center rounded-lg shadow-md mb-6 max-w-min">
+      <div className="flex items-center text-center justify-center mb-4">
+        <div className="flex items-center justify-center">
           <img
             src={skill.iconUrl}
             alt={skill.name}
-            className="w-8 h-8 mr-4"
+            className={`w-8 h-8 mr-2 rounded-full ${skill.animate}`}
           />
-          <h3 className="text-white text-lg">{skill.name}</h3>
+          <h3 className="text-white text-base mr-2">{skill.name}</h3>
+
+          <img
+            src={skill.iconUrl}
+            alt={skill.name}
+            className={`w-8 h-8 mr-2 rounded-full ${skill.animate}`}
+          />
         </div>
         <p className="text-gray-400">{skill.category}</p>
       </div>
-      <Rating rating={skill.rating} />
+      <p className="text-sm font-light text-center mb-2">{skill.desc}</p>
+      <Rating rating={skill.rating} className="justify-center flex" />
     </div>
   );
 };
