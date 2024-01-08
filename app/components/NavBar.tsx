@@ -21,7 +21,7 @@ import { tabs } from "./constants";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { tabsState } from "../store/atoms/tabs";
 import LinearDeterminate from "./LinerProgreeBar";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const CustomAppBar = styled(AppBar)(({ theme }) => ({
@@ -35,18 +35,20 @@ const CustomAppBar = styled(AppBar)(({ theme }) => ({
 }));
 const activeColor = "#F78066";
 const CutomTab = styled(Tabs)(({ theme }) => ({
-  minHeight: '42px',
+  minHeight: "60px",
   "& .MuiTabs-scroller": {
-    height: '44px',
+    // height: "44px",
+    display: 'flex',
+    alignItems: 'center'
   },
   "& .MuiTab-root": {
     color: "white",
     height: "28px",
-    padding: "8px 10px",
-    marginRight: "14px",
+    // padding: "8px 10px",
+    marginLeft: "14px",
     textTransform: "none",
     transition: "transform 0.3s, box-shadow 0.3s",
-    minHeight: '34px',
+    minHeight: "40px",
     "&:hover": {
       backgroundColor: "rgb(16, 19, 26)",
       borderRadius: "10px",
@@ -54,7 +56,7 @@ const CutomTab = styled(Tabs)(({ theme }) => ({
     },
   },
   "& .MuiSvgIcon-root": {
-    height: '1.25rem'
+    height: "1.25rem",
   },
   "& .Mui-selected": {
     color: "white !important",
@@ -115,17 +117,17 @@ const NavBar = () => {
   const [fav, setFav] = useState(false);
   const setTab = useSetRecoilState(tabsState);
   const tabState = useRecoilValue(tabsState);
-  let router = useRouter()
+  let router = useRouter();
 
   useEffect(() => {
-    if (typeof window !== 'undefined'){
-    const path = window.location.pathname.split('/').slice(1).shift();
-    setTab({
-      isLoading: false,
-      activeTab: path,
-    })
+    if (typeof window !== "undefined") {
+      const path = window.location.pathname.split("/").slice(1).shift();
+      setTab({
+        isLoading: false,
+        activeTab: path,
+      });
     }
-  }, [])
+  }, []);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -157,17 +159,16 @@ const NavBar = () => {
         isLoading: false,
         activeTab: v,
       });
-      if (typeof window !== 'undefined' && router) {
-        router.push(`/${v}`)
+      if (typeof window !== "undefined" && router) {
+        router.push(`/${v}`);
       }
-      
     }, 400);
   };
   return (
     <nav className="border-b border-gray-700 h-30">
       {tabState.isLoading && <LinearDeterminate />}
       <CustomAppBar position="static" color="transparent">
-        <Container maxWidth="xl">
+        {/* <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
               <IconButton
@@ -285,26 +286,56 @@ const NavBar = () => {
               </Menu>
             </Box>
           </Toolbar>
+        </Container> */}
+        <Container maxWidth="xl">
+          <Toolbar disableGutters>
+            <Box
+              sx={{
+                width: "100%",
+                bgcolor: "transparent",
+                justifyContent: "flex-start",
+                display: "flex",
+              }}
+            >
+              <CutomTab
+                value={tabState.activeTab}
+                onChange={(e, v) => handleChange(v)}
+                centered
+              >
+                {tabs.map(({ key, value, Icon, href }) => (
+                  <Tab
+                    className="text-base"
+                    key={value}
+                    label={key}
+                    value={value}
+                    icon={<Icon />}
+                    iconPosition="start"
+                  />
+                ))}
+              </CutomTab>
+            </Box>
+            <Box sx={{
+                bgcolor: "transparent",
+                justifyContent: "flex-end",
+                display: "flex",
+                padding: "0px 14px",
+              }}>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-haspopup="true"
+                onClick={() => setFav((fav) => !fav)}
+                color="inherit"
+                style={{ marginRight: 12 }}
+              >
+                {fav ? <StarIcon /> : <StarBorderIcon />}
+              </IconButton>
+              <div className="flex items-center">
+              <Avatar alt="sagun pic" src="/pic.jpg" />
+              </div>
+            </Box>
+          </Toolbar>
         </Container>
-        <Box
-          sx={{
-            width: "100%",
-            bgcolor: "transparent",
-            justifyContent: "flex-start",
-            display: "flex",
-            padding: "0px 14px",
-          }}
-        >
-          <CutomTab
-            value={tabState.activeTab}
-            onChange={(e, v) => handleChange(v)}
-            centered
-          >
-            {tabs.map(({ key, value, Icon, href }) => (
-              <Tab className="text-sm" key={value} label={key} value={value} icon={<Icon />} iconPosition="start" />
-            ))}
-          </CutomTab>
-        </Box>
       </CustomAppBar>
     </nav>
   );
