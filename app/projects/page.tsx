@@ -5,9 +5,10 @@ const Projects = () => {
   return (
     <main className="container mx-auto px-8 py-12">
       <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="flex">
         {projects.map(({ name, live, github, tech, desc, img }) => (
           <ProjectCard
+            key={name}
             name={name}
             live={live}
             github={github}
