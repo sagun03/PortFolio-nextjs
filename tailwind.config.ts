@@ -19,13 +19,20 @@ const config: Config = {
       },
       backgroundColor: {
         'primary': '#0E1117',
+        'secondary': '#F78066',
+        'secondary-dark': '#CF583E'
        },
        textColor: {
         'primary': '#F78066',
         'rating': '#FAAF00'
        },
        maxWidth: {
-        'min': '16rem'
+        'min': '16rem',
+        'project': '24rem'
+       },
+       height: {
+        'section-scroll': '34rem',
+        'about-me-scroll': '42rem'
        }
     },
     

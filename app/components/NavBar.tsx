@@ -1,4 +1,3 @@
-"use client";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -38,11 +37,12 @@ const CutomTab = styled(Tabs)(({ theme }) => ({
   minHeight: "60px",
   "& .MuiTabs-scroller": {
     // height: "44px",
-    display: 'flex',
-    alignItems: 'center'
+    display: "flex",
+    alignItems: "center",
   },
   "& .MuiTab-root": {
     color: "white",
+    fontSize: "1rem",
     height: "28px",
     // padding: "8px 10px",
     marginLeft: "14px",
@@ -304,7 +304,6 @@ const NavBar = () => {
               >
                 {tabs.map(({ key, value, Icon, href }) => (
                   <Tab
-                    className="text-base"
                     key={value}
                     label={key}
                     value={value}
@@ -314,12 +313,14 @@ const NavBar = () => {
                 ))}
               </CutomTab>
             </Box>
-            <Box sx={{
+            <Box
+              sx={{
                 bgcolor: "transparent",
                 justifyContent: "flex-end",
                 display: "flex",
                 padding: "0px 14px",
-              }}>
+              }}
+            >
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -331,7 +332,7 @@ const NavBar = () => {
                 {fav ? <StarIcon /> : <StarBorderIcon />}
               </IconButton>
               <div className="flex items-center">
-              <Avatar alt="sagun pic" src="/pic.jpg" />
+                <Avatar alt="sagun pic" src="/pic.jpg" />
               </div>
             </Box>
           </Toolbar>
