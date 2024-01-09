@@ -1,6 +1,6 @@
 const IntroSection = () => {
   return (
-    <section className="bg-gray-900 rounded-lg shadow-md p-8 mb-6">
+    <section className=" border-b border-gray-700 p-8 pb-12">
       <div className="text-lg">
         {/* Introduction */}
         <p className="mb-4">

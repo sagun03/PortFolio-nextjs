@@ -28,7 +28,7 @@ const config: Config = {
        },
        maxWidth: {
         'min': '16rem',
-        'project': '24rem'
+        'project': '22rem'
        },
        height: {
         'section-scroll': '34rem',
@@ -36,6 +36,11 @@ const config: Config = {
        },
        borderColor: {
         'primary': '#F78066'
+       },
+       maxHeight: {
+        'section-scroll': '90%',
+        'skills-scroll': '85%',
+        'about-me-scroll': '95%'
        }
     },
     

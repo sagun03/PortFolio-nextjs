@@ -3,9 +3,9 @@ import { projects } from "./components/consts";
 import ProjectCard from "./components/ProjectCard";
 const Projects = () => {
   return (
-    <main className="container mx-auto px-8 bg-gray-900 p-6 rounded-lg shadow-md text-white">
+    <main className="container h-full mx-auto px-8 bg-gray-900 p-6 rounded-lg shadow-md text-white">
       <h2 className="text-3xl flex justify-center  mb-4">Projects</h2>
-      <div className="flex gap-4 h-section-scroll flex-wrap overflow-y-auto overscroll-auto scroll-py-1">
+      <div className="flex gap-4 mt-8 max-h-section-scroll flex-wrap overflow-y-auto overscroll-auto scroll-py-1">
         {projects.map((category, index) => (
           <div key={index} className="mb-2 mt-6">
             <h3 className="text-xl flex mb-6">
