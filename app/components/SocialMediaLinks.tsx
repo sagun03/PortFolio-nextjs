@@ -4,7 +4,7 @@ import { Email, GitHub, LinkedIn, Twitter } from '@mui/icons-material';
 const SocialMediaLinks = () => {
   return (
     <div className="flex flex-col gap-3">
-      <a href="mailto:sagunsaluja13@gmail.com" className='text-sm' target="_blank" rel="noopener noreferrer">
+      <a href="mailto:sagunsaluja13@gmail.com" className='text-sm' >
         <Email sx={{ color: '#ff5733' }} />
         {" "}
         sagunsaluja13@gmail.com

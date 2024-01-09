@@ -33,6 +33,9 @@ const config: Config = {
        height: {
         'section-scroll': '34rem',
         'about-me-scroll': '42rem'
+       },
+       borderColor: {
+        'primary': '#F78066'
        }
     },
     

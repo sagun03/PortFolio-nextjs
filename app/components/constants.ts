@@ -24,18 +24,18 @@ export const tabs = [
     Icon: SpaceDashboardIcon,
     href: '/projects'
   },
-  {
-    key: "Repositories",
-    value: "repo",
-    Icon: LanIcon,
-    href: '/repo'
-  },
-  {
-    key: "Resume",
-    value: "resume",
-    Icon: DescriptionIcon,
-    href: '/resume'
-  },
+  // {
+  //   key: "Repositories",
+  //   value: "repo",
+  //   Icon: LanIcon,
+  //   href: '/repo'
+  // },
+  // {
+  //   key: "Resume",
+  //   value: "resume",
+  //   Icon: DescriptionIcon,
+  //   href: '/resume'
+  // },
   {
     key: "Contact Me",
     value: "contact",
