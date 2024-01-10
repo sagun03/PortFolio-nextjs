@@ -1,5 +1,7 @@
 import HomeRepairServiceIcon from "@mui/icons-material/HomeRepairService";
 import SocialMediaLinks from "./SocialMediaLinks";
+import Image from "next/image";
+import ContributionGraph from "./ContributionGraph";
 const RightSection = () => {
   return (
     <main className="flex-custom1 p-6">
@@ -20,10 +22,11 @@ const RightSection = () => {
           </div>
           <div className="mt-1 justify-items-start w-full">
             <p className="text-sm">
-              👋 I'm a passionate Software Developer with 4+ years of
+              👋 I&apos;m a passionate Software Developer with 4+ years of
               dedicated experience deeply enthusiastic about React (However, this portfolio is built in next js ✨)
             </p>
-            <div className="py-3 mt-8">
+            <div className="py-3 mt-2">
+            <ContributionGraph />
             <SocialMediaLinks />
             </div>
           </div>
