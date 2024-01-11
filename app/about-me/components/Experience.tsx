@@ -12,10 +12,10 @@ const Experience = () => {
         <ul className="list-disc text-base font-light list-outside p-2 px-4">
           <li>
             Worked on MRV Homepage and Global Header Application (
-            <strong className="text-primary">Lowe's</strong>).
+            <strong className="text-primary">Lowe&apos;s</strong>).
           </li>
           <li>
-            Implemented What's New functionality suing <strong className="text-primary">React</strong> , so that the associates in
+            Implemented What&apos;s New functionality suing <strong className="text-primary">React</strong> , so that the associates in
             stores can be up to date with the latest information.
           </li>
           <li>

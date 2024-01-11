@@ -26,6 +26,7 @@ const ContactForm = () => {
     <form
       onSubmit={handleSubmit}
       className="bg-white shadow-md rounded-lg p-8 max-w-md w-full transform transition duration-500 hover:shadow-lg hover:scale-105"
+      data-netlify="true"
     >
       <h2 className="text-3xl text-center font-semibold text-gray-800 mb-8">
         Contact Me

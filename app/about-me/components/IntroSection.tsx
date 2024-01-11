@@ -7,7 +7,7 @@ const IntroSection = () => {
           <span role="img" aria-label="Wave">
             👋
           </span>{" "}
-          Hey there! I'm Sagun Saluja, a passionate Software Developer based in
+          Hey there! I&apos;m Sagun Saluja, a passionate Software Developer based in
           Mississauga, Ontario.{" "}
         </p>
         <p className="text-base font-light">
@@ -29,18 +29,18 @@ const IntroSection = () => {
           <br />
           <br />
           🚀 At <strong className="text-primary">Nagarro</strong>, collaborating
-          on projects with <strong className="text-primary">Lowe's</strong>, a
+          on projects with <strong className="text-primary">Lowe&apos;s</strong>, a
           Fortune 50 giant, heightened my frontend expertise, shaping me into a
-          more seasoned developer. The challenges and experiences I've
+          more seasoned developer. The challenges and experiences I&apos;ve
           encountered have been instrumental in empowering me to excel in React
           and Next.js
           <br />
           <br />
           🌟 Currently enrolled in a comprehensive{" "}
           <strong className="text-primary">Full Stack Development</strong>{" "}
-          course in Canada, I'm enriching my skill set and have honed my
+          course in Canada, I&apos;m enriching my skill set and have honed my
           expertise in backend technologies like MongoDB, Node.js, and Python.
-          Meanwhile, I've strongbarked on exhilarating journeys into{" "}
+          Meanwhile, I&apos;ve strongbarked on exhilarating journeys into{" "}
           <strong className="text-primary">
             Competitive programming and open-source{" "}
           </strong>
