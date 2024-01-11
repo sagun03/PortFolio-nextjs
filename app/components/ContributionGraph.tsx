@@ -6,24 +6,23 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { contributionState } from "../store/atoms/githubContibution";
 
-interface ContributionDay {
-    contributionCount: number;
-    date: string;
-  }
-  
-  interface ContributionWeek {
-    contributionDays: ContributionDay[];
-  }
-  
-  interface ContributionGraphProps {
-    totalContributions: number;
-  }
+export interface ContributionDay {
+  contributionCount: number;
+  date: string;
+}
+
+export interface ContributionWeek {
+  contributionDays: ContributionDay[];
+}
 
 const ContributionGraph = () => {
-  const [contributions, setContributions] = useState<ContributionWeek[]>([]);
+  const setContributions = useSetRecoilState(contributionState);
+  const { contributions } = useRecoilValue(contributionState);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
+  console.log("contributions", contributions);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -58,14 +57,13 @@ const ContributionGraph = () => {
         const contributionData =
           response.data.data.viewer.contributionsCollection
             .contributionCalendar;
-        setContributions(contributionData.weeks);
+        setContributions({ contributions: contributionData.weeks });
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
-
-    fetchData();
-  }, []);
+    if (contributions.length === 0) fetchData();
+  }, [contributions, setContributions]);
 
   const handleDayClick = () => {
     setIsModalOpen(true);
@@ -120,12 +118,15 @@ const ContributionGraph = () => {
 
   return (
     <div className="font-semibold">
-      {contributions.length > 0 && (
+      {contributions?.length > 0 && (
         <>
-          <h1 className="my-4">
-            GitHub Contribution: {calculateTotalContributions()} in the last
-            year
+          <h1 className="my-2 font-normal">
+            <strong className="text-primary">GitHub </strong> Contribution:{" "}
+            <strong className="text-primary">
+              {calculateTotalContributions()}{" "}
+            </strong>
           </h1>
+          <p className="my-2 font-normal"></p>
           <div className="mb-4 transition-all duration-300 focus:outline-none transform hover:scale-120">
             {ReactCalenderHeatMap()}
           </div>
@@ -143,8 +144,8 @@ const ContributionGraph = () => {
             bgcolor: "#0E1117",
             border: "2px solid #F78066",
             "&:focus": {
-                border: "2px solid #F78066", // Green background color on focus
-              },
+              border: "2px solid #F78066", // Green background color on focus
+            },
             boxShadow: 24,
             p: 4,
           }}
@@ -155,7 +156,7 @@ const ContributionGraph = () => {
               year
             </h2>
             <Button onClick={closeModal} color="primary">
-              <CloseIcon style={{ color: "#F78066" }}  />
+              <CloseIcon style={{ color: "#F78066" }} />
             </Button>
           </div>
           {ReactCalenderHeatMap()}

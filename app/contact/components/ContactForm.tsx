@@ -27,6 +27,8 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       className="bg-white shadow-md rounded-lg p-8 max-w-md w-full transform transition duration-500 hover:shadow-lg hover:scale-105"
       data-netlify="true"
+      method="POST"
+      name="contact"
     >
       <h2 className="text-3xl text-center font-semibold text-gray-800 mb-8">
         Contact Me
@@ -66,18 +68,12 @@ const ContactForm = () => {
         />
       </div>
       <div className="text-center">
-        {isFormSubmitted.formSubmitted ? (
-          <p className="text-sm font-semibold  text-green-500 mt-4">
-            Thank you for contacting!
-          </p>
-        ) : (
-          <button
-            className="bg-secondary text-white font-semibold px-6 py-3 rounded-lg hover:bg-secondary-dark transition-all duration-300 focus:outline-none transform hover:scale-110"
-            type="submit"
-          >
-            Submit
-          </button>
-        )}
+        <button
+          className="bg-secondary text-white font-semibold px-6 py-3 rounded-lg hover:bg-secondary-dark transition-all duration-300 focus:outline-none transform hover:scale-110"
+          type="submit"
+        >
+          Submit
+        </button>
       </div>
     </form>
   );
