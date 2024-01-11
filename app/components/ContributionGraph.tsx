@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { contributionState } from "../store/atoms/githubContibution";
+import { Skeleton } from "@mui/material";
 
 export interface ContributionDay {
   contributionCount: number;
@@ -22,42 +23,53 @@ const ContributionGraph = () => {
   const setContributions = useSetRecoilState(contributionState);
   const { contributions } = useRecoilValue(contributionState);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  console.log("contributions", contributions);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(
-          "https://api.github.com/graphql",
-          {
-            query: `
-              query {
-                viewer {
-                  contributionsCollection {
-                    contributionCalendar {
-                      totalContributions
-                      weeks {
-                        contributionDays {
-                          contributionCount
-                          date
+        // if (typeof window !== "undefined") {
+        //   const contributions = localStorage.getItem("contributions");
+        //   if (contributions) {
+        //     const result = JSON.parse(contributions);
+        //     setContributions({  contributions: result });
+        //   }
+        // } else {
+          const response = await axios.post(
+            "https://api.github.com/graphql",
+            {
+              query: `
+                query {
+                  viewer {
+                    contributionsCollection {
+                      contributionCalendar {
+                        totalContributions
+                        weeks {
+                          contributionDays {
+                            contributionCount
+                            date
+                          }
                         }
                       }
                     }
                   }
                 }
-              }
-            `,
-          },
-          {
-            headers: {
-              Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
+              `,
             },
-          }
-        );
+            {
+              headers: {
+                Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
+              },
+            }
+          );
 
-        const contributionData =
-          response.data.data.viewer.contributionsCollection
-            .contributionCalendar;
-        setContributions({ contributions: contributionData.weeks });
+          const contributionData =
+            response.data.data.viewer.contributionsCollection
+              .contributionCalendar;
+          setContributions({ contributions: contributionData.weeks });
+          localStorage.setItem(
+            "contributions",
+            JSON.stringify(contributionData.weeks)
+          );
+        // }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -115,10 +127,10 @@ const ContributionGraph = () => {
       onClick={handleDayClick}
     />
   );
-
+console.log('contributions?.length', contributions?.length)
   return (
     <div className="font-semibold">
-      {contributions?.length > 0 && (
+      {contributions?.length > 0 ? (
         <>
           <h1 className="my-2 font-normal">
             <strong className="text-primary">GitHub </strong> Contribution:{" "}
@@ -131,7 +143,7 @@ const ContributionGraph = () => {
             {ReactCalenderHeatMap()}
           </div>
         </>
-      )}
+      ) : <div className="my-2 mb-8"><Skeleton  width="70%" animation="wave" sx={{ background: 'gray', mb: 1.4}} /><Skeleton animation="wave" sx={{ background: 'gray', mb: 1}} variant="rectangular" width="100%" height={50} /></div>}
 
       <Modal open={isModalOpen} disableAutoFocus onClose={closeModal}>
         <Box
