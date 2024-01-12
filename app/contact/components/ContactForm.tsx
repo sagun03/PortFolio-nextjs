@@ -30,6 +30,7 @@ const ContactForm = () => {
       method="POST"
       name="contact"
     >
+      <input type="hidden" name="contact" value="contact" />
       <h2 className="text-3xl text-center font-semibold text-gray-800 mb-8">
         Contact Me
       </h2>
