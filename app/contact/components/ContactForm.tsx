@@ -14,14 +14,7 @@ const ContactForm = () => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
-  // const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   setFormSubmitted({ formSubmitted: true });
-  //   setTimeout(() => {
-  //     setFormSubmitted({ formSubmitted: false });
-  //     setFormData({ name: "", email: "" });
-  //   }, 10000);
-  // };
+
   return (
     <form
       // onSubmit={handleSubmit}

@@ -6,9 +6,10 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { contributionState } from "../store/atoms/githubContibution";
 import { Skeleton } from "@mui/material";
+import { persistedContributionState } from "../store/atoms/githubContibution";
 
 export interface ContributionDay {
   contributionCount: number;
@@ -20,23 +21,20 @@ export interface ContributionWeek {
 }
 
 const ContributionGraph = () => {
-  const setContributions = useSetRecoilState(contributionState);
-  const { contributions } = useRecoilValue(contributionState);
+  // const setContributions = useSetRecoilState(contributionState);
+  // const { contributions } = useRecoilValue(contributionState);
+  const [contributionss, setContributions] = useRecoilState(
+    persistedContributionState
+  );
+  const { contributions } = contributionss;
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // if (typeof window !== "undefined") {
-        //   const contributions = localStorage.getItem("contributions");
-        //   if (contributions) {
-        //     const result = JSON.parse(contributions);
-        //     setContributions({  contributions: result });
-        //   }
-        // } else {
-          const response = await axios.post(
-            "https://api.github.com/graphql",
-            {
-              query: `
+        const response = await axios.post(
+          "https://api.github.com/graphql",
+          {
+            query: `
                 query {
                   viewer {
                     contributionsCollection {
@@ -53,23 +51,22 @@ const ContributionGraph = () => {
                   }
                 }
               `,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
             },
-            {
-              headers: {
-                Authorization: `Bearer ${process.env.NEXT_PUBLIC_TOKEN}`,
-              },
-            }
-          );
+          }
+        );
 
-          const contributionData =
-            response.data.data.viewer.contributionsCollection
-              .contributionCalendar;
-          setContributions({ contributions: contributionData.weeks });
-          localStorage.setItem(
-            "contributions",
-            JSON.stringify(contributionData.weeks)
-          );
-        // }
+        const contributionData =
+          response.data.data.viewer.contributionsCollection
+            .contributionCalendar;
+        setContributions({ contributions: contributionData.weeks });
+        localStorage.setItem(
+          "contributions",
+          JSON.stringify(contributionData.weeks)
+        );
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -127,7 +124,7 @@ const ContributionGraph = () => {
       onClick={handleDayClick}
     />
   );
-console.log('contributions?.length', contributions?.length)
+  console.log("contributions?.length", contributions?.length);
   return (
     <div className="font-semibold">
       {contributions?.length > 0 ? (
@@ -143,7 +140,22 @@ console.log('contributions?.length', contributions?.length)
             {ReactCalenderHeatMap()}
           </div>
         </>
-      ) : <div className="my-2 mb-8"><Skeleton  width="70%" animation="wave" sx={{ background: 'gray', mb: 1.4}} /><Skeleton animation="wave" sx={{ background: 'gray', mb: 1}} variant="rectangular" width="100%" height={50} /></div>}
+      ) : (
+        <div className="my-2 mb-8">
+          <Skeleton
+            width="70%"
+            animation="wave"
+            sx={{ background: "gray", mb: 1.4 }}
+          />
+          <Skeleton
+            animation="wave"
+            sx={{ background: "gray", mb: 1 }}
+            variant="rectangular"
+            width="100%"
+            height={50}
+          />
+        </div>
+      )}
 
       <Modal open={isModalOpen} disableAutoFocus onClose={closeModal}>
         <Box

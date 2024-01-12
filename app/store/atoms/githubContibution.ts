@@ -1,10 +1,12 @@
 "use client"
 import { ContributionWeek } from "@/app/components/ContributionGraph";
 import { atom } from "recoil";
+import { persistAtom } from './recoilPersist';
 
-export const contributionState = atom<{ contributions: ContributionWeek[] }>({
-  key: "contributionState",
-  default: {
+
+export const [contributionState, persistedContributionState] = persistAtom<{ contributions: ContributionWeek[] }>(
+  'contributionState',
+  {
     contributions: [],
-  },
-});
+  }
+);
