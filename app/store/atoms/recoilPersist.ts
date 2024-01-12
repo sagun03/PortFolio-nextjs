@@ -1,4 +1,4 @@
-// recoilPersist.ts
+"use client"
 import { atom, selector } from 'recoil';
 
 export const persistAtom = <T>(key: string, defaultValue: T) => {
@@ -6,7 +6,6 @@ export const persistAtom = <T>(key: string, defaultValue: T) => {
     key,
     default: defaultValue,
   });
-  
 
   const persistedSelector = selector<T>({
     key: `${key}PersistedSelector`,

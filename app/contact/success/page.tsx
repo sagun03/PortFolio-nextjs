@@ -1,4 +1,3 @@
-// ThankYou.tsx
 import React from "react";
 
 const ThankYou: React.FC = () => {
