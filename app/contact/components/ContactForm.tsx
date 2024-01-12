@@ -24,12 +24,15 @@ const ContactForm = () => {
   };
   return (
     <form
-      onSubmit={handleSubmit}
+      // onSubmit={handleSubmit}
+      action={"contact/success"}
       className="bg-white shadow-md rounded-lg p-8 max-w-md w-full transform transition duration-500 hover:shadow-lg hover:scale-105"
       data-netlify="true"
+      netlify={true}
       method="POST"
       name="contact"
       netlify-honeypot="bot-field"
+      {...({} as any)}
     >
       <input type="hidden" name="form-name" value="contact" />
       <h2 className="text-3xl text-center font-semibold text-gray-800 mb-8">
