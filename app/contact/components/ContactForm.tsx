@@ -24,8 +24,7 @@ const ContactForm = () => {
   };
   return (
     <form
-      // onSubmit={handleSubmit}
-      action={"contact/success"}
+      onSubmit={handleSubmit}
       className="bg-white shadow-md rounded-lg p-8 max-w-md w-full transform transition duration-500 hover:shadow-lg hover:scale-105"
       data-netlify="true"
       netlify={true}
