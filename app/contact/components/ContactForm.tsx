@@ -42,6 +42,7 @@ const ContactForm = () => {
         </label>
         <input
           id="name"
+          name="name"
           value={formData.name}
           onChange={handleInputChange}
           type="text"
@@ -59,6 +60,7 @@ const ContactForm = () => {
         </label>
         <input
           id="email"
+          name="email"
           value={formData.email}
           onChange={handleInputChange}
           type="email"
@@ -71,6 +73,7 @@ const ContactForm = () => {
         <button
           className="bg-secondary text-white font-semibold px-6 py-3 rounded-lg hover:bg-secondary-dark transition-all duration-300 focus:outline-none transform hover:scale-110"
           type="submit"
+          name="button"
         >
           Submit
         </button>
