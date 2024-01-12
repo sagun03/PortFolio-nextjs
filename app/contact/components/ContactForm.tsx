@@ -14,17 +14,18 @@ const ContactForm = () => {
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setFormSubmitted({ formSubmitted: true });
-    setTimeout(() => {
-      setFormSubmitted({ formSubmitted: false });
-      setFormData({ name: "", email: "" });
-    }, 10000);
-  };
+  // const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   setFormSubmitted({ formSubmitted: true });
+  //   setTimeout(() => {
+  //     setFormSubmitted({ formSubmitted: false });
+  //     setFormData({ name: "", email: "" });
+  //   }, 10000);
+  // };
   return (
     <form
-      onSubmit={handleSubmit}
+      // onSubmit={handleSubmit}
+      action={"contact/success"}
       className="bg-white shadow-md rounded-lg p-8 max-w-md w-full transform transition duration-500 hover:shadow-lg hover:scale-105"
       data-netlify="true"
       netlify={true}
