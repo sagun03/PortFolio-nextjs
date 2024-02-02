@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import MidSection from "./MidSection";
 import NavBar from "./NavBar";
 import RightSection from "./RightSection";
+import { memo } from "react";
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -27,4 +28,4 @@ const AppLayout = ({ children }: AppLayoutProps) => {
   );
 };
 
-export default AppLayout;
+export default memo(AppLayout);
