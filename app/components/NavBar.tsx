@@ -67,7 +67,7 @@ const CutomTab = styled(Tabs)(({ theme }) => ({
 }));
 
 const NavBar = () => {
-  const [fav, setFav] = useState(false);
+  // const [fav, setFav] = useState(false);
   const setTab = useSetRecoilState(tabsState);
   const tabState = useRecoilValue(tabsState);
   let router = useRouter();
@@ -83,18 +83,25 @@ const NavBar = () => {
   }, []);
   const handleChange = (v: string) => {
     setTab({
-      isLoading: true,
+      isLoading: false,
       activeTab: tabState.activeTab,
     });
-    setTimeout(() => {
-      setTab({
-        isLoading: false,
-        activeTab: v,
-      });
-      if (typeof window !== "undefined" && router) {
-        router.push(`/${v}`);
-      }
-    }, 400);
+    // setTimeout(() => {
+    //   setTab({
+    //     isLoading: false,
+    //     activeTab: v,
+    //   });
+    //   if (typeof window !== "undefined" && router) {
+    //     router.push(`/${v}`);
+    //   }
+    // }, 0);
+    setTab({
+      isLoading: false,
+      activeTab: v,
+    });
+    if (typeof window !== "undefined" && router) {
+      router.push(`/${v}`);
+    }
   };
   return (
     <nav className="border-b border-gray-700 h-30">
