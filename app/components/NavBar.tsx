@@ -82,10 +82,6 @@ const NavBar = () => {
     }
   }, []);
   const handleChange = (v: string) => {
-    setTab({
-      isLoading: false,
-      activeTab: tabState.activeTab,
-    });
     // setTimeout(() => {
     //   setTab({
     //     isLoading: false,
