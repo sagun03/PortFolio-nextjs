@@ -22,11 +22,11 @@ const RightSection = () => {
           </div>
           <div className="mt-1 justify-items-start w-full">
             <p className="text-sm">
-              👋 I&apos;m a passionate Software Developer with 4+ years of
+              👋 I&apos;m a passionate Software Developer with 5+ years of
               dedicated experience deeply enthusiastic about React (However, this portfolio is built in next js ✨)
             </p>
             <div className="py-3 mt-2">
-            <ContributionGraph />
+            {/* <ContributionGraph /> */}
             <SocialMediaLinks />
             </div>
           </div>
