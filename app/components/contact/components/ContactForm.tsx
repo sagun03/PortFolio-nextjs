@@ -8,9 +8,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 
 const ContactForm = () => {
   const setFormData = useSetRecoilState(contactFormState);
-  const setFormSubmitted = useSetRecoilState(formSubmitted);
   const formData = useRecoilValue(contactFormState);
-  const isFormSubmitted = useRecoilValue(formSubmitted);
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
@@ -18,7 +16,7 @@ const ContactForm = () => {
   return (
     <form
       // onSubmit={handleSubmit}
-      action={"contact/success"}
+      // action={"contact/success"}
       className="bg-white shadow-md rounded-lg p-8 max-w-md w-full transform transition duration-500 hover:shadow-lg hover:scale-105"
       data-netlify="true"
       netlify={true}

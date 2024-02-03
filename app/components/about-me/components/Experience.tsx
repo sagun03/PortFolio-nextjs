@@ -1,7 +1,6 @@
 const Experience = () => {
   return (
-    <section className="bg-gray-900 rounded-lg shadow-md p-8 mb-6">
-      <h2 className="text-xl font-semibold mb-4">Professional Experience</h2>
+    <section className="px-4 mb-2 max-h-about-me-scroll flex-wrap overflow-y-auto overscroll-auto">
       <div className="mb-6">
         <h3 className="text-lg font-sstrongibold mb-2">
           <span className="underline pb-2">

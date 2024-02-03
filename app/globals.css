@@ -30,7 +30,7 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 5px;
 
 }
 
@@ -41,6 +41,6 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #111827;
+  background: #F77F66;
   border-radius: 5px;
 }

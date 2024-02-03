@@ -1,15 +1,9 @@
+import TypingParagraph from "./TypingParagraph";
+
 const IntroSection = () => {
   return (
-    <section className=" border-b border-gray-700 p-8 pb-12">
-      <div className="text-lg">
-        {/* Introduction */}
-        <p className="mb-4">
-          <span role="img" aria-label="Wave">
-            👋
-          </span>{" "}
-          Hey there! I&apos;m Sagun Saluja, a passionate Software Developer based in
-          Mississauga, Ontario.{" "}
-        </p>
+    <section className="bg-gray-900 rounded-lg shadow-md py-6 px-4 mb-2 max-h-about-me-scroll flex-wrap overflow-y-auto overscroll-auto">
+      <div className="text-lg"> 
         <p className="text-base font-light">
           <span role="img" aria-label="Rocket">
             🚀
