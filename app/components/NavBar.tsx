@@ -112,6 +112,7 @@ const NavBar = () => {
                       label={key}
                       icon={<Icon />}
                       iconPosition="start"
+                      key={value}
                       // sx={{
                       //   textDecoration: 'none',
                       //   color: 'inherit',
