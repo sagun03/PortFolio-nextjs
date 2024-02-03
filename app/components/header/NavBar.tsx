@@ -17,9 +17,9 @@ import { InputBase, LinearProgress, Tab, Tabs } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import StarIcon from "@mui/icons-material/Star";
-import { tabs } from "./constants";
+import { tabs } from "../constants";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { tabsState } from "../store/atoms/tabs";
+import { tabsState } from "../../store/atoms/tabs";
 import LinearDeterminate from "./LinerProgreeBar";
 import ResumeDownload from "./ResumeDownload";
 

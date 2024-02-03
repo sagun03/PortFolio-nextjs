@@ -1,7 +1,7 @@
 import HomeRepairServiceIcon from "@mui/icons-material/HomeRepairService";
 import SocialMediaLinks from "./SocialMediaLinks";
 import Image from "next/image";
-import ContributionGraph from "./ContributionGraph";
+import ContributionGraph from "../contributionGrpah/ContributionGraph";
 const RightSection = () => {
   return (
     <main className="flex-custom1 p-6">

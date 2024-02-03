@@ -8,9 +8,9 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import CloseIcon from "@mui/icons-material/Close";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-import { contributionState } from "../store/atoms/githubContibution";
+import { contributionState } from "../../store/atoms/githubContibution";
 import { Skeleton } from "@mui/material";
-import { persistedContributionState } from "../store/atoms/githubContibution";
+import { persistedContributionState } from "../../store/atoms/githubContibution";
 
 export interface ContributionDay {
   contributionCount: number;

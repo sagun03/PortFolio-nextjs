@@ -1,8 +1,8 @@
 "use client"
 import { RecoilRoot } from "recoil";
-import MidSection from "./MidSection";
-import NavBar from "./NavBar";
-import RightSection from "./RightSection";
+import MidSection from "./layout/MidSection";
+import NavBar from "./header/NavBar";
+import RightSection from "./layout/RightSection";
 import { memo } from "react";
 
 interface AppLayoutProps {

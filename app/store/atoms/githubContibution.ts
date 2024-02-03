@@ -1,5 +1,5 @@
 "use client"
-import { ContributionWeek } from "@/app/components/ContributionGraph";
+import { ContributionWeek } from "@/app/components/contributionGrpah/ContributionGraph";
 import { atom } from "recoil";
 import { persistAtom } from './recoilPersist';
 
