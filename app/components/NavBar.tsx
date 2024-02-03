@@ -21,6 +21,8 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { tabsState } from "../store/atoms/tabs";
 import LinearDeterminate from "./LinerProgreeBar";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+
 import ResumeDownload from "./ResumeDownload";
 
 const CustomAppBar = styled(AppBar)(({ theme }) => ({
@@ -72,32 +74,17 @@ const NavBar = () => {
   const tabState = useRecoilValue(tabsState);
   let router = useRouter();
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const path = window.location.pathname.split("/").slice(1).shift();
+  const handleChange = (v: string) => {
+    setTab(prev => ({...prev, isLoading: true}));
+    setTimeout(() => {
       setTab({
         isLoading: false,
-        activeTab: path,
+        activeTab: v,
       });
-    }
-  }, []);
-  const handleChange = (v: string) => {
-    // setTimeout(() => {
-    //   setTab({
-    //     isLoading: false,
-    //     activeTab: v,
-    //   });
-    //   if (typeof window !== "undefined" && router) {
-    //     router.push(`/${v}`);
-    //   }
-    // }, 0);
-    setTab({
-      isLoading: false,
-      activeTab: v,
-    });
-    if (typeof window !== "undefined" && router) {
-      router.push(`/${v}`);
-    }
+      if (typeof window !== "undefined" && router) {
+        router.push(`/${v}`);
+      }
+    }, 400);
   };
   return (
     <nav className="border-b border-gray-700 h-30">
@@ -119,13 +106,31 @@ const NavBar = () => {
                 centered
               >
                 {tabs.map(({ key, value, Icon }) => (
-                  <Tab
-                    value={value}
-                    key={value}
-                    label={key}
-                    icon={<Icon />}
-                    iconPosition="start"
-                  />
+                  // <Link href={`/${value}`} key={value} passHref>
+                    <Tab
+                      value={value}
+                      label={key}
+                      icon={<Icon />}
+                      iconPosition="start"
+                      // sx={{
+                      //   textDecoration: 'none',
+                      //   color: 'inherit',
+                      //   '&:hover': {
+                      //     backgroundColor: 'rgb(16, 19, 26)',
+                      //     borderRadius: '10px',
+                      //     transform: 'scale(1.03)',
+                      //   },
+                      //   '&.Mui-selected': {
+                      //     backgroundColor: 'rgb(16, 19, 26)',
+                      //     borderRadius: '10px',
+                      //     color: 'white !important', // Ensure it takes precedence
+                      //   },
+                      //   '&.Mui-selected:hover': {
+                      //     backgroundColor: 'rgb(16, 19, 26)',
+                      //   },
+                      // }}
+                    />
+                  // </Link>
                 ))}
               </CutomTab>
             </Box>
