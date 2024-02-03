@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SkillCard from "./components/SkillCard";
 import { skillsData } from "./components/const";
 

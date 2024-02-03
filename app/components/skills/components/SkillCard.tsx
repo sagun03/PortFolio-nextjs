@@ -1,5 +1,5 @@
 import React from "react";
-import Rating from "@/app/components/skills/components/StarRating";
+import Rating from "./StarRating";
 
 const SkillCard = ({ skill }: { skill: any }) => {
   return (
