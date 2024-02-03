@@ -1,5 +1,5 @@
-import IntroSection from "../components/IntroSection";
-import Experience from "../components/Experience";
+import IntroSection from "../IntroSection";
+import Experience from "../Experience";
 
 const AboutMe = () => {
   return (

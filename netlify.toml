@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/"
-  to = "/about-me"
+  to = "/portFolio"
 
 [build]
   command = "npm run build"

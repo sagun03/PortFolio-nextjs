@@ -1,6 +1,5 @@
-"use client";
+"use client"
 import { RecoilRoot } from "recoil";
-import Footer from "./Footer";
 import MidSection from "./MidSection";
 import NavBar from "./NavBar";
 import RightSection from "./RightSection";
