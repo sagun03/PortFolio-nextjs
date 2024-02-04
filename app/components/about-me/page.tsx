@@ -7,7 +7,6 @@ import MuiAccordionSummary, {
   AccordionSummaryProps,
 } from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import IntroSection from "./components/IntroSection";
 import Experience from "./components/Experience";
 import TypingParagraph from "./components/TypingParagraph";
@@ -52,8 +51,8 @@ const AccordionDetails: any = styled(MuiAccordionDetails)(({ theme }) => ({
   paddingLeft: theme.spacing(4),
   borderTop: "1px solid rgba(0, 0, 0, .125)",
   color: 'white',
-  overflowY: 'auto', // Add scrollbar for overflow
-  maxHeight: '60vh', // Set a maximum height for the scrollbar, adjust as needed
+  overflowY: 'auto', 
+  maxHeight: '60vh', 
 }));
 
 const AboutMe = () => {
