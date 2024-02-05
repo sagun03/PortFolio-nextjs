@@ -1,61 +1,10 @@
 "use client";
 import * as React from "react";
-import { styled } from "@mui/material/styles";
-import ArrowForwardIosSharpIcon from "@mui/icons-material/ArrowForwardIosSharp";
-import MuiAccordion, { AccordionProps } from "@mui/material/Accordion";
-import MuiAccordionSummary, {
-  AccordionSummaryProps,
-} from "@mui/material/AccordionSummary";
-import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import IntroSection from "./components/IntroSection";
 import Experience from "./components/Experience";
-import DelayRendering from "./components/DelayRendering";
+import FadeEffectWrapper from "./components/FadeEffectWrapper";
+import { Accordion, AccordionDetails, AccordionSummary } from "../common/Acordian";
 
-const Accordion = styled((props: AccordionProps) => (
-  <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ theme }) => ({
-  border: `1px solid ${theme.palette.divider}`,
-  marginBottom: "12px",
-  borderRadius: "10px", // Rounded corners
-  "&:not(:last-child)": {
-    borderBottom: 0,
-  },
-  backgroundColor: "#0F1117",
-  "&::before": {
-    display: "none",
-  },
-}));
-
-const AccordionSummary = styled((props: AccordionSummaryProps) => (
-  <MuiAccordionSummary
-    expandIcon={
-      <ArrowForwardIosSharpIcon sx={{ fontSize: "0.9rem", color: "white" }} />
-    }
-    {...props}
-  />
-))(({ theme }) => ({
-  color: "white",
-  // backgroundColor:
-  //   theme.palette.mode === 'dark'
-  //     ? 'rgba(255, 255, 255, .05)'
-  //     : 'rgba(0, 0, 0, .03)',
-  flexDirection: "row-reverse",
-  "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
-    transform: "rotate(90deg)",
-  },
-  "& .MuiAccordionSummary-content": {
-    marginLeft: theme.spacing(1),
-  },
-}));
-
-const AccordionDetails: any = styled(MuiAccordionDetails)(({ theme }) => ({
-  paddingRight: theme.spacing(4),
-  paddingLeft: theme.spacing(4),
-  borderTop: "1px solid rgba(0, 0, 0, .125)",
-  color: "white",
-  overflowY: "auto",
-  maxHeight: "60vh",
-}));
 
 const AboutMe = () => {
   const [expanded, setExpanded] = React.useState<string | false>("panel1");
@@ -74,12 +23,12 @@ const AboutMe = () => {
   return (
     <main className="flex h-full flex-col mt-2 mb-2 bg-gray-900 rounded-lg shadow-md text-white">
       <div className="text-2xl mb-1 px-8 pt-8 pb-4 text-center">
-        <DelayRendering
+        <FadeEffectWrapper
           text={`👋 Hey there! I'm Sagun Saluja, a passionate Software Developer based in Mississauga, Ontario.
 `}
         />
       </div>
-      <DelayRendering
+      <FadeEffectWrapper
         duration={400}>
       <section className="px-8 rounded-lg">
         <Accordion
@@ -100,14 +49,14 @@ const AboutMe = () => {
           <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
             <h2 className="text-xl font-semibold">Professional Experience</h2>
           </AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails className="max-h-experience-scroll">
             <section className="bg-gray-900 rounded-lg shadow-md py-6">
               <Experience />
             </section>
           </AccordionDetails>
         </Accordion>
       </section>
-      </DelayRendering>
+      </FadeEffectWrapper>
     </main>
   );
 };

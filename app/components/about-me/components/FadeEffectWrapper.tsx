@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect, ReactNode } from "react";
 
-const DelayRendering = ({ text, children, duration = 50 }: { text?: string, children?: ReactNode, duration?: number }) => {
+const FadeEffectWrapper = ({ text, children, duration = 50 }: { text?: string, children?: ReactNode, duration?: number }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const fadeInSpeed = duration;
@@ -31,4 +31,4 @@ const DelayRendering = ({ text, children, duration = 50 }: { text?: string, chil
   );
 };
 
-export default DelayRendering;
+export default FadeEffectWrapper;

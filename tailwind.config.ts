@@ -40,7 +40,8 @@ const config: Config = {
        maxHeight: {
         'section-scroll': '90%',
         'skills-scroll': '85%',
-        'about-me-scroll': '50vh'
+        'about-me-scroll': '50vh',
+        'experience-scroll': '60vh'
        }
     },
     
