@@ -1,7 +1,7 @@
 const Experience = () => {
   return (
-    <section className="px-4 mb-2 max-h-about-me-scroll flex-wrap overflow-y-auto overscroll-auto">
-      <div className="mb-6">
+    <section className="px-4 mb-2 max-h-about-me-scroll flex-wrap overflow-y-auto overscroll-auto  text-gray-100">
+      <div className="mb-6  text-gray-100">
         <h3 className="text-lg font-sstrongibold mb-2">
           <span className="underline pb-2">
             Associate Staff Engineer at Nagarro
@@ -14,8 +14,9 @@ const Experience = () => {
             <strong className="text-primary">Lowe&apos;s</strong>).
           </li>
           <li>
-            Implemented What&apos;s New functionality suing <strong className="text-primary">React</strong> , so that the associates in
-            stores can be up to date with the latest information.
+            Implemented What&apos;s New functionality suing{" "}
+            <strong className="text-primary">React</strong> , so that the
+            associates in stores can be up to date with the latest information.
           </li>
           <li>
             Worked on Global header to include all the apps in a single
@@ -36,9 +37,8 @@ const Experience = () => {
         </ul>
       </div>
 
-      {/* Associate Engineer */}
       <div>
-        <h3 className="text-lg font-sstrongibold mb-2">
+        <h3 className="text-lg font-semibold  text-gray-100 mb-2">
           <span className="underline pb-2">
             Associate Engineer at Successive Technologies
           </span>
@@ -52,10 +52,7 @@ const Experience = () => {
           </li>
           <li>
             Developed and maintained responsive web applications using{" "}
-            <strong className="text-primary">
-              {" "}
-              MERN Stack
-            </strong>
+            <strong className="text-primary"> MERN Stack</strong>
           </li>
           <li>
             Worked on{" "}

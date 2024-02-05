@@ -1,10 +1,8 @@
-import TypingParagraph from "./TypingParagraph";
-
 const IntroSection = () => {
   return (
     <section className="bg-gray-900 rounded-lg shadow-md py-6 px-4 mb-2 max-h-about-me-scroll flex-wrap overflow-y-auto overscroll-auto">
       <div className="text-lg"> 
-        <p className="text-base font-light">
+        <p className="text-base font-light text-gray-100">
           <span role="img" aria-label="Rocket">
             🚀
           </span>{" "}
