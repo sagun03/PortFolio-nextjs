@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect, ReactNode } from "react";
 
 const DelayRendering = ({ text, children, duration = 50 }: { text?: string, children?: ReactNode, duration?: number }) => {
