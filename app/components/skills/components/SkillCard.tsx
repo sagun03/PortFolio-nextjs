@@ -10,22 +10,21 @@ const SkillCard = ({ skill }: { skill: any }) => {
             <img
               src={skill.iconUrl}
               alt={skill.name}
-              className={`w-8 h-8 mr-2 rounded-full ${skill.animate}`}
+              className={`w-8 h-8 mr-2 rounded-full`}
             />
           )}
-          <h3 className={`text-white text-base mr-2 ${!skill.iconUrl ? skill.animate : ''}`}>{skill.name}</h3>
+          <h3 className={`text-white text-xl mr-2 ${!skill.iconUrl ? skill.animate : ''}`}>{skill.name}</h3>
 
-          {skill.iconUrl && (
+          {/* {skill.iconUrl && (
             <img
               src={skill.iconUrl}
               alt={skill.name}
               className={`w-8 h-8 mr-2 rounded-full ${skill.animate}`}
             />
-          )}
+          )} */}
         </div>
-        <p className="text-gray-400">{skill.category}</p>
       </div>
-      <p className="text-sm font-light text-center mb-2">{skill.desc}</p>
+      <p className="text-sm text-gray-400 font-light text-center mb-2">{skill.desc}</p>
       <Rating rating={skill.rating} className="justify-center flex" />
     </div>
   );

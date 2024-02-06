@@ -1,13 +1,13 @@
 "use client";
-import * as React from "react";
 import IntroSection from "./components/IntroSection";
 import Experience from "./components/Experience";
 import FadeEffectWrapper from "./components/FadeEffectWrapper";
 import { Accordion, AccordionDetails, AccordionSummary } from "../common/Acordian";
+import { useState } from "react";
 
 
 const AboutMe = () => {
-  const [expanded, setExpanded] = React.useState<string | false>("panel1");
+  const [expanded, setExpanded] = useState<string | false>("panel1");
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
