@@ -3,7 +3,7 @@ import Rating from "./StarRating";
 
 const SkillCard = ({ skill }: { skill: any }) => {
   return (
-    <div className="bg-primary border border-gray-700 p-4 text-white justify-center rounded-lg shadow-md mb-6 max-w-min">
+    <div className="bg-primary border border-gray-700 p-4 text-white justify-center rounded-lg shadow-md max-w-min">
       <div className="flex items-center text-center justify-center mb-4">
         <div className="flex items-center justify-center">
           {skill.iconUrl && (

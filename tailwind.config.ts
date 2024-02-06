@@ -24,11 +24,15 @@ const config: Config = {
        },
        textColor: {
         'primary': '#F78066',
-        'rating': '#FAAF00'
+        'rating': '#FAAF00',
+        'tag-line': '#BFEFFF'
        },
        maxWidth: {
         'min': '16rem',
         'project': '22rem'
+       },
+       width: {
+        'skills-container': '98%'
        },
        height: {
         'section-scroll': '34rem',

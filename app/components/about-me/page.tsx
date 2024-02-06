@@ -30,7 +30,7 @@ const AboutMe = () => {
       </div>
       <FadeEffectWrapper
         duration={400}>
-      <section className="px-8 rounded-lg">
+      <section className="px-8 rounded-lg flex gap-4 flex-col	">
         <Accordion
           expanded={expanded === "panel1"}
           onChange={handleChange("panel1")}
