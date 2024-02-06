@@ -4,21 +4,20 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-} from "../common/Accordion"; // Assuming correct import path
+} from "../common/Accordion";
 import SkillCard from "./components/SkillCard";
 import { skillsData } from "./components/const";
 
-export default function Skills() {
-  const [expanded, setExpanded] = useState<number>(0); // Initially, first accordion is open
+const Skills = () =>  {
+  const [expanded, setExpanded] = useState<number>(0); 
   const accordionRef = useRef<HTMLDivElement | null>(null);
 
   const handleChange = (panel: number) => (
     event: React.SyntheticEvent,
     isExpanded: boolean
   ) => {
-    setExpanded(isExpanded ? panel : -1); // Expand if not already expanded, otherwise close
+    setExpanded(isExpanded ? panel : -1); 
 
-    // Scroll to the top of the expanded accordion panel
     if (accordionRef.current && isExpanded) {
       accordionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -65,3 +64,5 @@ export default function Skills() {
     </div>
   );
 }
+
+export default Skills;
