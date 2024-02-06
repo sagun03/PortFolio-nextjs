@@ -25,7 +25,8 @@ const config: Config = {
        textColor: {
         'primary': '#F78066',
         'rating': '#FAAF00',
-        'tag-line': '#BFEFFF'
+        'tag-line': '#BFEFFF',
+        'skills-desc': '#ACE1C2'
        },
        maxWidth: {
         'min': '16rem',

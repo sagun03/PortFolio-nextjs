@@ -3,7 +3,7 @@ import Rating from "./StarRating";
 
 const SkillCard = ({ skill }: { skill: any }) => {
   return (
-    <div className="bg-primary border border-gray-700 p-4 text-white justify-center rounded-lg shadow-md max-w-min">
+    <div className="bg-gray-900 border border-gray-700 p-4 text-white justify-center rounded-lg shadow-md max-w-min">
       <div className="flex items-center text-center justify-center mb-4">
         <div className="flex items-center justify-center">
           {skill.iconUrl && (
@@ -13,7 +13,7 @@ const SkillCard = ({ skill }: { skill: any }) => {
               className={`w-8 h-8 mr-2 rounded-full`}
             />
           )}
-          <h3 className={`text-white text-xl mr-2 ${!skill.iconUrl ? skill.animate : ''}`}>{skill.name}</h3>
+          <h3 className={`text-white text-xl mr-2 `}>{skill.name}</h3>
 
           {/* {skill.iconUrl && (
             <img
@@ -24,7 +24,7 @@ const SkillCard = ({ skill }: { skill: any }) => {
           )} */}
         </div>
       </div>
-      <p className="text-sm text-gray-400 font-light text-center mb-2">{skill.desc}</p>
+      <p className="text-sm text-gray-500 font-semibold text-center mb-2">{skill.desc}</p>
       <Rating rating={skill.rating} className="justify-center flex" />
     </div>
   );

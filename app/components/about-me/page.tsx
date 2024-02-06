@@ -2,7 +2,7 @@
 import IntroSection from "./components/IntroSection";
 import Experience from "./components/Experience";
 import FadeEffectWrapper from "./components/FadeEffectWrapper";
-import { Accordion, AccordionDetails, AccordionSummary } from "../common/Acordian";
+import { Accordion, AccordionDetails, AccordionSummary } from "../common/Accordion";
 import { useState } from "react";
 
 
