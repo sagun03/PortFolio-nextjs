@@ -31,7 +31,7 @@ const Skills = () =>  {
 
   return (
     <div className="container h-full mx-auto px-8 bg-gray-900 p-6 rounded-lg shadow-md text-white">
-      <h2 className="text-3xl flex justify-center mb-4">
+      <h2 className="text-3xl font-semibold	 flex justify-center mb-4">
         <FadeEffectWrapper text={`Technologies and Skills`} />
       </h2>
       <p className="text-tag-line flex justify-center">

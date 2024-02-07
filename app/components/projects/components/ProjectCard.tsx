@@ -11,10 +11,10 @@ interface IProjectCar {
 
 const ProjectCard = ({ name, live, github, tech, desc, img }: IProjectCar) => {
   return (
-    <div className="bg-primary border p-3 m-1 b-2 border-gray-700 rounded-lg overflow-hidden shadow-lg max-w-project">
+    <div className="bg-gray-900 border p-3 m-1 b-2 border-gray-700 rounded-lg overflow-hidden shadow-lg max-w-project">
       <a
         href={live}
-        className="text-white bg-primary border-gray-700 justify-center rounded-lg shadow-md mb-6 rounded "
+        className="text-white bg-gray-900 border-gray-700 justify-center rounded-lg shadow-md mb-6 rounded "
         target="_blank"
         rel="noopener noreferrer"
       >

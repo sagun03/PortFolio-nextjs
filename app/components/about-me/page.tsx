@@ -25,13 +25,13 @@ const AboutMe = () => {
 
   return (
     <main className="flex h-full flex-col mt-2 mb-2 bg-gray-900  rounded-lg shadow-md text-white">
-      <div className="text-2xl mb-1 px-8 pt-8 pb-4 text-center">
+      <div className="text-2xl mb-1 px-8 pt-8 pb-4 font-semibold	 text-center">
         <FadeEffectWrapper
           text={`👋 Hey there! I'm Sagun Saluja, a passionate Software Developer based in Mississauga, Ontario.
 `}
         />
       </div>
-      <FadeEffectWrapper duration={400}>
+      <FadeEffectWrapper duration={300}>
         <section className="px-8 rounded-lg flex gap-4 flex-col	">
           <Accordion
             expanded={expanded === "panel1"}
@@ -44,9 +44,11 @@ const AboutMe = () => {
               <h2 className="text-xl font-semibold">Introduction</h2>
             </AccordionSummary>
             <AccordionDetails>
-              <section className="bg-gray-900  rounded-lg shadow-md py-6">
-                <IntroSection />
-              </section>
+              <FadeEffectWrapper duration={500}>
+                <section className="bg-gray-900  rounded-lg shadow-md py-6">
+                  <IntroSection />
+                </section>
+              </FadeEffectWrapper>
             </AccordionDetails>
           </Accordion>
           <Accordion
@@ -60,9 +62,11 @@ const AboutMe = () => {
               <h2 className="text-xl font-semibold">Professional Experience</h2>
             </AccordionSummary>
             <AccordionDetails className="max-h-experience-scroll">
-              <section className="bg-gray-900 rounded-lg shadow-md py-6">
-                <Experience />
-              </section>
+              <FadeEffectWrapper duration={500}>
+                <section className="bg-gray-900 rounded-lg shadow-md py-6">
+                  <Experience />
+                </section>
+              </FadeEffectWrapper>
             </AccordionDetails>
           </Accordion>
         </section>
