@@ -8,6 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      outline: {
+        blue: ['2px solid #0000ff', '1px'],
+        'secondary': '#F78066',
+      },
+      textOutlineWidth: {
+        '2': '2px',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

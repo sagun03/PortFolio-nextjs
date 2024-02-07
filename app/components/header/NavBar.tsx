@@ -1,22 +1,10 @@
-"use client"
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import ImportantDevicesIcon from "@mui/icons-material/ImportantDevices";
-import { useEffect, useState } from "react";
-import { styled, alpha } from "@mui/material/styles";
-import { InputBase, LinearProgress, Tab, Tabs } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import StarIcon from "@mui/icons-material/Star";
+import { styled } from "@mui/material/styles";
+import { Tab, Tabs, BottomNavigation, BottomNavigationAction, useMediaQuery } from "@mui/material";
 import { tabs } from "../constants";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { tabsState } from "../../store/atoms/tabs";
@@ -32,12 +20,12 @@ const CustomAppBar = styled(AppBar)(({ theme }) => ({
     minHeight: "60px", // Center align items in the toolbar
   },
 }));
+
 const activeColor = "#F78066";
 
-const CutomTab = styled(Tabs)(({ theme }) => ({
+const CustomTabs = styled(Tabs)(({ theme }) => ({
   minHeight: "60px",
   "& .MuiTabs-scroller": {
-    // height: "44px",
     display: "flex",
     alignItems: "center",
   },
@@ -45,7 +33,6 @@ const CutomTab = styled(Tabs)(({ theme }) => ({
     color: "white",
     fontSize: "1rem",
     height: "28px",
-    // padding: "8px 10px",
     marginLeft: "14px",
     textTransform: "none",
     transition: "transform 0.3s, box-shadow 0.3s",
@@ -68,9 +55,9 @@ const CutomTab = styled(Tabs)(({ theme }) => ({
 }));
 
 const NavBar = () => {
-  // const [fav, setFav] = useState(false);
   const setTab = useSetRecoilState(tabsState);
   const tabState = useRecoilValue(tabsState);
+  const isMobile = useMediaQuery("(max-width:600px)");
 
   const handleChange = (v: string) => {
     setTab(prev => ({...prev, isLoading: true}));
@@ -96,7 +83,7 @@ const NavBar = () => {
                 display: "flex",
               }}
             >
-              <CutomTab
+             {!isMobile && <CustomTabs
                 value={tabState.activeTab}
                 onChange={(e, v) => handleChange(v)}
                 centered
@@ -110,7 +97,8 @@ const NavBar = () => {
                       key={value}
                     />
                 ))}
-              </CutomTab>
+              </CustomTabs>}
+             {isMobile &&  <h2 className="text-2xl text-transparent border-b-2 border-black font-semibold">Web Portfolio</h2>}
             </Box>
             <Box
               sx={{
@@ -128,7 +116,26 @@ const NavBar = () => {
           </Toolbar>
         </Container>
       </CustomAppBar>
+      {isMobile && (
+        <Box sx={{ bgcolor: "primary.main", color: "white", position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 999 }}>
+          <BottomNavigation
+            value={tabState.activeTab}
+            onChange={(e, v) => handleChange(v)}
+            showLabels
+          >
+            {tabs.map(({ key, value, Icon }) => (
+              <BottomNavigationAction
+                label={key}
+                value={value}
+                icon={<Icon />}
+                key={value}
+              />
+            ))}
+          </BottomNavigation>
+        </Box>
+      )}
     </nav>
   );
 };
+
 export default NavBar;

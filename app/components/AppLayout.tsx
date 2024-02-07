@@ -15,7 +15,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
       <RecoilRoot>
         <NavBar />
         <main
-          className="flex h-full bg-primary px-16"
+          className="sm:flex h-full bg-primary px-2 sm:px-8 md:px-16 "
           style={{ height: "calc(100vh - 4rem)" }}
         >
           <RightSection />
