@@ -4,7 +4,13 @@ import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import { styled } from "@mui/material/styles";
-import { Tab, Tabs, BottomNavigation, BottomNavigationAction, useMediaQuery } from "@mui/material";
+import {
+  Tab,
+  Tabs,
+  BottomNavigation,
+  BottomNavigationAction,
+  useMediaQuery,
+} from "@mui/material";
 import { tabs } from "../constants";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { tabsState } from "../../store/atoms/tabs";
@@ -60,7 +66,7 @@ const NavBar = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
 
   const handleChange = (v: string) => {
-    setTab(prev => ({...prev, isLoading: true}));
+    setTab((prev) => ({ ...prev, isLoading: true }));
     setTimeout(() => {
       setTab({
         isLoading: false,
@@ -75,20 +81,35 @@ const NavBar = () => {
       <CustomAppBar position="static" color="transparent">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
+            {isMobile && (
+              <Box
+                sx={{
+                  bgcolor: "transparent",
+                  justifyContent: "flex-end",
+                  display: "flex",
+                  padding: "0px 14px",
+                }}
+              >
+                <Box className="flex items-center">
+                  <Avatar alt="sagun pic" src="/pic.jpg" />
+                </Box>
+              </Box>
+            )}
             <Box
               sx={{
                 width: "100%",
                 bgcolor: "transparent",
-                justifyContent: "flex-start",
+                justifyContent: isMobile ? "center" : "flex-start",
                 display: "flex",
               }}
             >
-             {!isMobile && <CustomTabs
-                value={tabState.activeTab}
-                onChange={(e, v) => handleChange(v)}
-                centered
-              >
-                {tabs.map(({ key, value, Icon }) => (
+              {!isMobile && (
+                <CustomTabs
+                  value={tabState.activeTab}
+                  onChange={(e, v) => handleChange(v)}
+                  centered
+                >
+                  {tabs.map(({ key, value, Icon }) => (
                     <Tab
                       value={value}
                       label={key}
@@ -96,9 +117,14 @@ const NavBar = () => {
                       iconPosition="start"
                       key={value}
                     />
-                ))}
-              </CustomTabs>}
-             {isMobile &&  <h2 className="text-2xl text-transparent border-b-2 border-black font-semibold">Web Portfolio</h2>}
+                  ))}
+                </CustomTabs>
+              )}
+              {isMobile && (
+                <h2 className="text-2xl items-center text-center  border-b-2 border-green font-semibold">
+                  Web Portfolio
+                </h2>
+              )}
             </Box>
             <Box
               sx={{
@@ -108,16 +134,26 @@ const NavBar = () => {
                 padding: "0px 14px",
               }}
             >
-              <ResumeDownload />
-              <div className="flex items-center">
+              <ResumeDownload isMobile={isMobile} />
+             {!isMobile && <div className="flex items-center">
                 <Avatar alt="sagun pic" src="/pic.jpg" />
-              </div>
+              </div>}
             </Box>
           </Toolbar>
         </Container>
       </CustomAppBar>
       {isMobile && (
-        <Box sx={{ bgcolor: "primary.main", color: "white", position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 999 }}>
+        <Box
+          sx={{
+            bgcolor: "primary.main",
+            color: "white",
+            position: "fixed",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            zIndex: 999,
+          }}
+        >
           <BottomNavigation
             value={tabState.activeTab}
             onChange={(e, v) => handleChange(v)}
