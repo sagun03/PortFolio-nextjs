@@ -9,14 +9,20 @@ import SkillCard from "./components/SkillCard";
 import { skillsData } from "./components/const";
 
 const Skills = () =>  {
-  const [expanded, setExpanded] = useState<number>(0); 
+  const [expanded, setExpanded] = useState<number[]>(skillsData.map((_, index) => index)); 
   const accordionRef = useRef<HTMLDivElement | null>(null);
 
   const handleChange = (panel: number) => (
     event: React.SyntheticEvent,
     isExpanded: boolean
   ) => {
-    setExpanded(isExpanded ? panel : -1); 
+    if (isExpanded) {
+      setExpanded((prevExpanded) => [...prevExpanded, panel]); // Expand the clicked panel
+    } else {
+      if (expanded.length > 1) {
+        setExpanded((prevExpanded) => prevExpanded.filter((item) => item !== panel)); // Collapse the clicked panel if more than one expanded
+      }
+    }
 
     if (accordionRef.current && isExpanded) {
       accordionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -35,10 +41,10 @@ const Skills = () =>  {
       </p>
       <div className="flex max-h-skills-scroll mt-8 flex gap-4 flex-wrap overflow-y-auto overscroll-auto">
         {skillsData.map((category, index) => (
-          <div key={index} className="w-skills-container" ref={index === expanded ? accordionRef : null}>
+          <div key={index} className="w-skills-container" ref={index === expanded[expanded.length - 1] ? accordionRef : null}>
             <FadeEffectWrapper duration={300}>
               <Accordion
-                expanded={expanded === index}
+                expanded={expanded.includes(index)}
                 onChange={handleChange(index)}
               >
                 <AccordionSummary
