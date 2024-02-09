@@ -25,7 +25,7 @@ const AboutMe = () => {
 
   return (
     <main className="flex h-full flex-col mt-2 mb-2 bg-gray-900  rounded-lg shadow-md text-white">
-      <div className="text-2xl mb-1 px-8 pt-8 pb-4 font-semibold	 text-center">
+      <div className="hidden sm:block text-2xl mb-1 px-8 pt-8 pb-4 font-semibold text-center">
         <FadeEffectWrapper
           text={`👋 Hey there! I'm Sagun Saluja, a passionate Software Developer based in Mississauga, Ontario.
 `}
