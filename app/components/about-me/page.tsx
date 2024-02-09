@@ -24,7 +24,7 @@ const AboutMe = () => {
     };
 
   return (
-    <main className="flex h-full flex-col mt-2 mb-2 bg-gray-900  rounded-lg shadow-md text-white">
+    <main className="flex sm:h-full bg-primary flex-col mt-2 mb-2 sm:bg-gray-900  rounded-lg shadow-md text-white">
       <div className="hidden sm:block text-2xl mb-1 px-8 pt-8 pb-4 font-semibold text-center">
         <FadeEffectWrapper
           text={`👋 Hey there! I'm Sagun Saluja, a passionate Software Developer based in Mississauga, Ontario.
@@ -45,7 +45,7 @@ const AboutMe = () => {
             </AccordionSummary>
             <AccordionDetails>
               <FadeEffectWrapper duration={500}>
-                <section className="bg-gray-900  rounded-lg shadow-md py-6">
+                <section className="bg-gray-900 sm:h-auto  rounded-lg shadow-md py-6">
                   <IntroSection />
                 </section>
               </FadeEffectWrapper>
@@ -63,7 +63,7 @@ const AboutMe = () => {
             </AccordionSummary>
             <AccordionDetails className="max-h-experience-scroll">
               <FadeEffectWrapper duration={500}>
-                <section className="bg-gray-900 rounded-lg shadow-md py-6">
+                <section className="bg-gray-900 rounded-lg sm:h-full shadow-md py-6">
                   <Experience />
                 </section>
               </FadeEffectWrapper>

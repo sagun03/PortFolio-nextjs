@@ -18,7 +18,6 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  height: 100vh;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
   background: linear-gradient(
       to bottom,
@@ -43,4 +42,20 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #FFA68E;
   border-radius: 5px;
+}
+
+.intro-scroll {
+  max-height: 30vh
+}
+.experience-scroll {
+  max-height: 40vh
+}
+
+@media (min-height: 850px) {
+  .intro-scroll {
+    max-height: 50vh
+  }
+  .experience-scroll {
+    max-height: 50vh
+  }
 }
