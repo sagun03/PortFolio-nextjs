@@ -1,7 +1,8 @@
 import React from "react";
 import CloudDownloadIcon from "@mui/icons-material/CloudDownload";
+import IconButton from "@mui/material/IconButton";
 
-const ResumeDownload = ({  isMobile }: { isMobile: boolean}) => {
+const ResumeDownload = ({ isMobile }: { isMobile: boolean }) => {
   const handleDownload = () => {
     const resumeUrl = "/resume.pdf";
     const link = document.createElement("a");
@@ -12,14 +13,34 @@ const ResumeDownload = ({  isMobile }: { isMobile: boolean}) => {
     document.body.removeChild(link);
   };
 
+  if (isMobile) {
+    return (
+      <IconButton
+        aria-label="download resume"
+        color="inherit"
+        onClick={handleDownload}
+        sx={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          zIndex: 1000,
+        }}
+        className="bg-secondary hover:bg-secondary-dark text-white flex font-bold py-2 px-4 rounded transition-all duration-300 shadow-sm focus:outline-none focus:shadow-outline"
+
+      >
+        <CloudDownloadIcon />
+      </IconButton>
+    );
+  }
+
   return (
-    <div className={`text-center ${!isMobile && 'mr-4'} `}>
+    <div className="text-center mr-4">
       <button
         onClick={handleDownload}
-        className="bg-secondary  hover:bg-secondary-dark text-white flex font-bold py-2 px-4 rounded transition-all duration-300 shadow-sm focus:outline-none focus:shadow-outline"
+        className="bg-secondary hover:bg-secondary-dark text-white flex font-bold py-2 px-4 rounded transition-all duration-300 shadow-sm focus:outline-none focus:shadow-outline"
       >
-        <CloudDownloadIcon className={`${!isMobile && 'mr-2'}`} />
-      {!isMobile && 'Resume' }  
+        <CloudDownloadIcon className="mr-2" />
+        Resume
       </button>
     </div>
   );
