@@ -13,9 +13,8 @@ const ResumeDownload = ({ isMobile }: { isMobile: boolean }) => {
     document.body.removeChild(link);
   };
 
-  if (isMobile) {
-    return (
-      <IconButton
+  return (
+    <IconButton
         aria-label="download resume"
         color="inherit"
         onClick={handleDownload}
@@ -30,19 +29,6 @@ const ResumeDownload = ({ isMobile }: { isMobile: boolean }) => {
       >
         <CloudDownloadIcon />
       </IconButton>
-    );
-  }
-
-  return (
-    <div className="text-center mr-4">
-      <button
-        onClick={handleDownload}
-        className="bg-secondary hover:bg-secondary-dark text-white flex font-bold py-2 px-4 rounded transition-all duration-300 shadow-sm focus:outline-none focus:shadow-outline"
-      >
-        <CloudDownloadIcon className="mr-2" />
-        Resume
-      </button>
-    </div>
   );
 };
 

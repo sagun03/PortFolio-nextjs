@@ -25,44 +25,59 @@ const CustomAppBar = styled(AppBar)(({ theme }) => ({
   },
 }));
 
-const activeColor = "#F78066";
-const CustomTabs = styled(Tabs)(({ theme }) => ({
-  minHeight: "60px",
-  "& .MuiTabs-scroller": {
-    display: "flex",
-    alignItems: "center",
-  },
-  "& .MuiTab-root": {
-    color: "white",
-    fontSize: "1rem",
-    height: "28px",
-    marginLeft: "14px",
-    textTransform: "none",
-    transition: "transform 0.3s, box-shadow 0.3s",
-    minHeight: "40px",
-    "&:hover": {
-      backgroundColor: "rgb(16, 19, 26)",
-      borderRadius: "10px",
-      transform: "scale(1.03)",
+const CustomTabs = styled(Tabs)(({ theme }) => {
+  const isMobile = useMediaQuery("(max-width:650px)");
+  const activeColor = "#F78066";
+
+  return {
+    minHeight: "60px",
+    flex: isMobile && 0.5,
+    "& .MuiTabs-flexContainer": {
+      gap: "2.5rem",
+      alignItems: 'flex-start'
     },
-  },
-  "& .MuiSvgIcon-root": {
-    height: "1.25rem",
-  },
-  "& .Mui-selected": {
-    color: "white !important",
-  },
-  "& .MuiTabs-indicator": {
-    backgroundColor: activeColor,
-  },
-}));
+    "& .MuiTabs-scroller": {
+      display: "flex",
+      alignItems: "center",
+    },
+    "& .MuiTab-root": {
+      color: "white",
+      fontSize: isMobile ? "1.5rem" : "1rem",
+      height: "28px",
+      marginLeft: !isMobile && "14px",
+      marginRight: isMobile && "1.5rem",
+      padding: isMobile && '2rem',
+      textTransform: "none",
+      transition: "transform 0.3s, box-shadow 0.3s",
+      minHeight: "40px",
+      "&:hover": {
+        backgroundColor: "rgb(16, 19, 26)",
+        borderRadius: "10px",
+        transform: "scale(1.03)",
+      },
+    },
+    "& .MuiSvgIcon-root": {
+      height: "1.25rem",
+    },
+    "& .Mui-selected": {
+      color: "white !important",
+    },
+    "& .MuiTabs-indicator": {
+      backgroundColor: activeColor,
+    },
+  };
+});
 
 const Sidebar = ({
   isOpen,
   handleClose,
+  handleChange,
+  tabState,
 }: {
   isOpen: boolean;
   handleClose: () => void;
+  handleChange: (v: any) => void;
+  tabState: { isLoading: boolean; activeTab: string | undefined };
 }) => {
   return (
     <Drawer
@@ -75,7 +90,14 @@ const Sidebar = ({
         },
       }}
     >
-      <CustomTabs orientation="vertical" onChange={handleClose}>
+      <CustomTabs
+        orientation="vertical"
+        value={tabState.activeTab}
+        onChange={(e, v) => {
+          handleChange(v); // Invoke handleChange
+          handleClose(); // Invoke handleClose
+        }}
+      >
         {tabs.map(({ key, value, Icon }) => (
           <Tab
             value={value}
@@ -93,7 +115,7 @@ const Sidebar = ({
 const NavBar = () => {
   const setTab = useSetRecoilState(tabsState);
   const tabState = useRecoilValue(tabsState);
-  const isMobile = useMediaQuery("(max-width:600px)");
+  const isMobile = useMediaQuery("(max-width:650px)");
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleSidebarToggle = () => {
@@ -118,7 +140,7 @@ const NavBar = () => {
   return (
     <nav className="border-b border-gray-700 h-30">
       {tabState.isLoading && <LinearDeterminate />}
-      <CustomAppBar position="static" color="transparent">
+      <CustomAppBar position="sticky" color="transparent">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             {isMobile && (
@@ -142,6 +164,8 @@ const NavBar = () => {
                 <Sidebar
                   isOpen={sidebarOpen}
                   handleClose={handleCloseSidebar}
+                  tabState={tabState}
+                  handleChange={handleChange}
                 />
               </Box>
             )}
@@ -180,6 +204,7 @@ const NavBar = () => {
                 bgcolor: "transparent",
                 justifyContent: "flex-end",
                 display: "flex",
+                gap: "1rem",
                 padding: "0px 14px",
               }}
             >
