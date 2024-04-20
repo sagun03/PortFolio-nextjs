@@ -32,7 +32,7 @@ const AboutMe = () => {
         />
       </div>
       <FadeEffectWrapper duration={300}>
-        <section className="px-8 rounded-lg flex gap-4 flex-col	">
+        <section className="sm:px-8 rounded-lg flex gap-4 flex-col	">
           <Accordion
             expanded={expanded === "panel1"}
             onChange={handleChange("panel1")}
@@ -43,9 +43,9 @@ const AboutMe = () => {
             >
               <h2 className="text-xl font-semibold">Introduction</h2>
             </AccordionSummary>
-            <AccordionDetails>
+            <AccordionDetails className="bg-gray-900 mx-6 rounded-lg shadow-md sm:bg-inherit sm:mx-0 px-2 sm:px-8">
               <FadeEffectWrapper duration={500}>
-                <section className="bg-gray-900 sm:h-auto  rounded-lg shadow-md py-6">
+                <section className="bg-gray-900 sm:h-auto rounded-lg shadow-md py-4">
                   <IntroSection />
                 </section>
               </FadeEffectWrapper>
@@ -61,7 +61,7 @@ const AboutMe = () => {
             >
               <h2 className="text-xl font-semibold">Professional Experience</h2>
             </AccordionSummary>
-            <AccordionDetails className="max-h-experience-scroll">
+            <AccordionDetails className="max-h-experience-scroll bg-gray-900 mx-6 rounded-lg shadow-md sm:bg-inherit sm:mx-0 px-2 sm:px-8">
               <FadeEffectWrapper duration={500}>
                 <section className="bg-gray-900 rounded-lg sm:h-full shadow-md py-6">
                   <Experience />

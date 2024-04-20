@@ -1,14 +1,14 @@
 const Experience = () => {
   return (
-    <section className="px-4 mb-2 experience-scroll flex-wrap sm:overflow-y-auto sm:overscroll-auto  text-gray-100">
-      <div className="mb-6  text-gray-100">
-        <h3 className="text-lg font-sstrongibold mb-2">
+    <section className="px-4 sm:mb-2 experience-scroll flex-wrap sm:overflow-y-auto sm:overscroll-auto  text-gray-100">
+      <div className="mb-6 text-gray-100">
+        <h3 className="text-base sm:text-lg font-sstrongibold mb-2">
           <span className="underline pb-2">
             Associate Staff Engineer at Nagarro
           </span>
           , India (Sep 2021 - August 2023)
         </h3>
-        <ul className="list-disc text-base font-light list-outside p-2 px-4">
+        <ul className="text-sm sm:text-base list-disc font-light list-outside p-2 px-4">
           <li>
             Worked on MRV Homepage and Global Header Application (
             <strong className="text-primary">Lowe&apos;s</strong>).
@@ -38,14 +38,14 @@ const Experience = () => {
       </div>
 
       <div>
-        <h3 className="text-lg font-semibold  text-gray-100 mb-2">
+        <h3 className="text-base sm:text-lg font-semibold  text-gray-100 mb-2">
           <span className="underline pb-2">
             Associate Engineer at Successive Technologies
           </span>
           , India (Jan 2019 - Sep 2021)
         </h3>
         {/* Experience bullet points */}
-        <ul className="list-disc text-base font-light list-outside p-2 px-4">
+        <ul className="list-disc text-sm sm:text-base font-light list-outside p-2 px-4">
           <li>
             Worked on Plan And Buy Manager Application (
             <strong className="text-primary">Dentsu UK</strong>).

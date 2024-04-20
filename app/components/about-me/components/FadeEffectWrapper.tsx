@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect, ReactNode } from "react";
 
-const FadeEffectWrapper = ({ text, children, duration = 50 }: { text?: string, children?: ReactNode, duration?: number }) => {
+const FadeEffectWrapper = ({ text, children, duration = 50, backgroundColor }: { text?: string, children?: ReactNode, duration?: number, backgroundColor?: string }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const fadeInSpeed = duration;
@@ -24,7 +24,7 @@ const FadeEffectWrapper = ({ text, children, duration = 50 }: { text?: string, c
     <p
       className={`transition-opacity duration-1000 ${
         isVisible ? "opacity-100" : "opacity-0"
-      }`}
+      } ${backgroundColor}`}
     >
       {text || children}
     </p>

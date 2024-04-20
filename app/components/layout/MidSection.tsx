@@ -1,7 +1,7 @@
 "use client"
 const MidSection = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="flex-custom2 h-auto m-6 px-2">
+    <main className="flex-custom2 h-auto sm:m-6 sm:px-2">
       {children}
     </main>
   );
