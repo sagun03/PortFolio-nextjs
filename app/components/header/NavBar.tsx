@@ -31,9 +31,10 @@ const CustomTabs = styled(Tabs)(({ theme }) => {
 
   return {
     minHeight: "60px",
+    marginTop: isMobile && "40px",
     flex: isMobile && 0.5,
     "& .MuiTabs-flexContainer": {
-      gap: "2.5rem",
+      gap: "1.5rem",
       alignItems: 'flex-start'
     },
     "& .MuiTabs-scroller": {

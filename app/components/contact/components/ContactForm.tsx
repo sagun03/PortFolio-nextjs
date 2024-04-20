@@ -5,22 +5,39 @@ import {
 } from "@/app/store/atoms/contactFormState";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
+import ThankYou from "../success/page";
 
 const ContactForm = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const setFormData = useSetRecoilState(contactFormState);
   const formData = useRecoilValue(contactFormState);
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const myForm = event.currentTarget;
+    const formData: any = new FormData(myForm);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => setIsOpen(true))
+      .catch((error) => alert(error));
+  };
+
   return (
+    <>
     <form
-      // onSubmit={handleSubmit}
-      // action={"contact/success"}
+      onSubmit={handleSubmit}
       className="bg-white shadow-md rounded-lg p-8 max-w-md w-full transform transition duration-500 hover:shadow-lg hover:scale-105"
       data-netlify="true"
       netlify={true}
-      method="POST"
+      method="post"
       name="contact"
       netlify-honeypot="bot-field"
       {...({} as any)}
@@ -75,6 +92,8 @@ const ContactForm = () => {
         </button>
       </div>
     </form>
+    <ThankYou isOpen={isOpen} setIsOpen={setIsOpen} />
+    </>
   );
 };
 
