@@ -36,7 +36,6 @@ const CustomTabs = styled(Tabs)(() => {
   }
   return {
     minHeight: "60px",
-    marginTop: isMobile && "40px",
     flex: isMobile && 0.5,
     "& .MuiTabs-flexContainer": {
       gap: "1.5rem",
