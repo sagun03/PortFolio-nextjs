@@ -200,8 +200,8 @@ const NavBar = () => {
                 </CustomTabs>
               )}
               {isMobile && (
-                <h2 className="text-2xl items-center text-center  border-b-2 border-green font-semibold">
-                  Web Portfolio
+                <h2 className="text-2xl items-center text-center  border-b-2 font-semibold">
+                  Sagun Saluja
                 </h2>
               )}
             </Box>

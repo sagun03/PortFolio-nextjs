@@ -1,6 +1,11 @@
 import SocialMediaLinks from "./SocialMediaLinks";
 
 const RightSection = () => {
+  let isMobile = false
+  if (typeof window !== 'undefined') {
+    const isMobileString = window.localStorage.getItem("isMobile");
+    isMobile = isMobileString ? JSON.parse(isMobileString) : false;
+  }
   return (
     <main className="flex-custom1 p-6">
       <section className="py-1">
@@ -14,15 +19,15 @@ const RightSection = () => {
             />
           </div>
           <div className="p-2 sm:p-0 flex flex-col text-center sm:text-start sm:block justify-center sm:mt-4 sm:justify-items-start  w-full">
-            <h2 className="text-3xl font-semibold sm:text-2xl">Sagun Saluja</h2>
+            {!isMobile && <h2 className="text-3xl font-semibold sm:text-2xl">Sagun Saluja</h2>}
             <p className="text-gray-600 font-semibold text-xl">
-              Software Developer
+              Full Stack Developer
             </p>
           </div>
           </div>
           <div className="mt-6 sm:mt-1 sm:justify-items-start w-full">
             <p className="text-base text-center sm:text-sm sm:text-start">
-              👋 I&apos;m a passionate Software Developer with 5+ years of
+              👋 I&apos;m a passionate Full Stack Developer with 5+ years of
               dedicated experience deeply enthusiastic about React (However, this portfolio is built in next js ✨)
             </p>
             <div className="py-3 mt-2 hidden sm:block">
