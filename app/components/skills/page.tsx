@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useRef } from "react";
 import FadeEffectWrapper from "../about-me/components/FadeEffectWrapper";
 import {

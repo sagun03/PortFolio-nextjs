@@ -5,7 +5,7 @@ import {
 } from "@/app/store/atoms/contactFormState";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import ThankYou from "../success/page";
+import ThankYou from "../success";
 
 const ContactForm = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -92,7 +92,7 @@ const ContactForm = () => {
         </button>
       </div>
     </form>
-    <ThankYou isOpen={isOpen} setIsOpen={setIsOpen} />
+    <ThankYou isOpen={isOpen} />
     </>
   );
 };

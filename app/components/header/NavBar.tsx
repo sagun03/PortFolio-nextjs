@@ -15,6 +15,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { tabsState } from "../../store/atoms/tabs";
 import LinearDeterminate from "./LinerProgreeBar";
 import ResumeDownload from "./ResumeDownload";
+
 const CustomAppBar = styled(AppBar)(({ theme }) => ({
   "& .MuiContainer-root": {
     paddingRight: "12px",
@@ -25,17 +26,21 @@ const CustomAppBar = styled(AppBar)(({ theme }) => ({
   },
 }));
 
-const CustomTabs = styled(Tabs)(({ theme }) => {
-  const isMobile = useMediaQuery("(max-width:650px)");
+const CustomTabs = styled(Tabs)(() => {
   const activeColor = "#F78066";
+  let isMobile;
 
+  if (typeof window !== 'undefined') {
+    const isMobileString = window.localStorage.getItem("isMobile");
+    isMobile = isMobileString ? JSON.parse(isMobileString) : false;
+  }
   return {
     minHeight: "60px",
     marginTop: isMobile && "40px",
     flex: isMobile && 0.5,
     "& .MuiTabs-flexContainer": {
       gap: "1.5rem",
-      alignItems: 'flex-start'
+      alignItems: "flex-start",
     },
     "& .MuiTabs-scroller": {
       display: "flex",
@@ -47,7 +52,7 @@ const CustomTabs = styled(Tabs)(({ theme }) => {
       height: "28px",
       marginLeft: !isMobile && "14px",
       marginRight: isMobile && "1.5rem",
-      padding: isMobile && '2rem',
+      padding: isMobile && "2rem",
       textTransform: "none",
       transition: "transform 0.3s, box-shadow 0.3s",
       minHeight: "40px",

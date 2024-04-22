@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef, useState } from "react";
 import { projects } from "./components/consts";
 import ProjectCard from "./components/ProjectCard";

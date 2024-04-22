@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const ThankYou = ({ isOpen, setIsOpen }: {isOpen: boolean, setIsOpen: React.Dispatch<React.SetStateAction<boolean>>}) => {
+const ThankYou = ({ isOpen }: {isOpen: boolean}) => {
   if (!isOpen) return <></>
   return (
     <div className="fixed inset-0 flex justify-center items-center z-50">
