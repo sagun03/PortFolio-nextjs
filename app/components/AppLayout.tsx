@@ -15,12 +15,10 @@ const AppLayout = ({ children }: AppLayoutProps) => {
       <RecoilRoot>
         <NavBar />
         <main
-          className="sm:flex h-full sm:h-main-screen bg-primary px-2 sm:px-8 md:px-16 "
-          // style={{ height: "calc(100vh - 4rem)" }}
+          className="h-full bg-primary px-2 sm:h-main-screen sm:px-8 md:px-16 sm:flex"
         >
           <RightSection />
           <MidSection>{children}</MidSection>
-          {/* <LeftSection /> */}
         </main>
       </RecoilRoot>
     </>
