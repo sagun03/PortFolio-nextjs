@@ -6,6 +6,7 @@ import {
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import ThankYou from "../success";
+import FadeEffectWrapper from "../../about-me/components/FadeEffectWrapper";
 
 const ContactForm = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -31,10 +32,10 @@ const ContactForm = () => {
   };
 
   return (
-    <>
+   <>
     <form
       onSubmit={handleSubmit}
-      className="bg-white shadow-md rounded-lg p-8 max-w-md w-full transform transition duration-500 hover:shadow-lg hover:scale-105"
+      className="bg-black shadow-md rounded-lg p-8 max-w-md w-full transform transition duration-500 hover:shadow-lg hover:scale-105"
       data-netlify="true"
       netlify={true}
       method="post"
@@ -42,14 +43,18 @@ const ContactForm = () => {
       netlify-honeypot="bot-field"
       {...({} as any)}
     >
+     
       <input type="hidden" name="form-name" value="contact" />
-      <h2 className="text-3xl text-center font-semibold text-gray-800 mb-8">
+      <FadeEffectWrapper duration={100}>
+      <h2 className="text-3xl text-center font-semibold text-white mb-8">
         Contact Me
       </h2>
+      </FadeEffectWrapper>
+      <FadeEffectWrapper duration={200}>
       <div className="mb-6">
         <label
           htmlFor="name"
-          className="text-gray-700 font-semibold block mb-2"
+          className="text-white font-semibold block mb-2"
         >
           Your Name
         </label>
@@ -64,10 +69,12 @@ const ContactForm = () => {
           required
         />
       </div>
+      </FadeEffectWrapper>
+      <FadeEffectWrapper duration={300}>
       <div className="mb-6">
         <label
           htmlFor="email"
-          className="text-gray-700 font-semibold block mb-2"
+          className="text-whitefont-semibold block mb-2"
         >
           Your Email
         </label>
@@ -82,6 +89,8 @@ const ContactForm = () => {
           required
         />
       </div>
+      </FadeEffectWrapper>
+      <FadeEffectWrapper duration={400}>
       <div className="text-center">
         <button
           className="bg-secondary text-white font-semibold px-6 py-3 rounded-lg hover:bg-secondary-dark transition-all duration-300 focus:outline-none transform hover:scale-110"
@@ -91,6 +100,7 @@ const ContactForm = () => {
           Submit
         </button>
       </div>
+      </FadeEffectWrapper>
     </form>
     <ThankYou isOpen={isOpen} />
     </>
