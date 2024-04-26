@@ -24,11 +24,11 @@ const ResumeDownload = ({ isMobile }: { isMobile: boolean }) => {
   };
 
   return (
-    <IconButton
+    <div
         aria-label="download resume"
         color="inherit"
         onClick={handleDownload}
-        sx={{
+        style={{
           position: 'fixed',
           bottom: '20px',
           right: '20px',
@@ -38,7 +38,7 @@ const ResumeDownload = ({ isMobile }: { isMobile: boolean }) => {
 
       >
         <CloudDownloadIcon />
-      </IconButton>
+      </div>
   );
 };
 

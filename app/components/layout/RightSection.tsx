@@ -8,7 +8,7 @@ const RightSection = () => {
     isMobile = isMobileString ? JSON.parse(isMobileString) : false;
   }
   return (
-    <main className="flex-custom1 p-6">
+    <main className="flex-custom1 p-6 text-white">
       <section className="py-1">
         <div className="flex items-center flex-col">
           <div className="flex justify-center w-full sm:flex-col">
@@ -28,7 +28,7 @@ const RightSection = () => {
                     Sagun Saluja
                   </h2>
                 )}
-                <p className="text-gray-600 font-semibold text-xl">
+                <p className="text-gray-200 sm:text-gray-500 font-semibold text-xl">
                   Full Stack Developer
                 </p>
               </div>

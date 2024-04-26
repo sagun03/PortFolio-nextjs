@@ -12,29 +12,27 @@ interface AppLayoutProps {
 
 const AppLayout = ({ children }: AppLayoutProps) => {
   const [isDelay, setIsDelay] = useState(true);
- 
+
   useEffect(() => {
     const delayTimer = setTimeout(() => {
       setIsDelay(false);
-    }, 0); 
-    return () => clearTimeout(delayTimer); 
+    }, 0);
+    return () => clearTimeout(delayTimer);
   }, []);
 
-  
   return (
     <>
       <RecoilRoot>
         {isDelay ? (
           <></>
         ) : (
-          <>
-            {" "}
+          <div className="flex h-screen flex-col">
             <NavBar />
-            <main className="h-full bg-primary px-2 sm:h-main-screen sm:px-8 md:px-16 sm:flex">
+            <main className="sm:flex-1 flex flex-col sm:flex-row">
               <RightSection />
               <MidSection>{children}</MidSection>
             </main>
-          </>
+          </div>
         )}
       </RecoilRoot>
     </>

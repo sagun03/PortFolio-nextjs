@@ -17,6 +17,7 @@ import LinearDeterminate from "./LinerProgreeBar";
 import ResumeDownload from "./ResumeDownload";
 
 const CustomAppBar = styled(AppBar)(({ theme }) => ({
+  backgroundColor: 'black',
   "& .MuiContainer-root": {
     paddingRight: "12px",
     paddingLeft: "12px",
@@ -36,7 +37,7 @@ const CustomTabs = styled(Tabs)(() => {
   }
   return {
     minHeight: "60px",
-    flex: isMobile && 0.5,
+    flex: isMobile ? 0 : 1,
     "& .MuiTabs-flexContainer": {
       gap: "1.5rem",
       alignItems: "flex-start",
