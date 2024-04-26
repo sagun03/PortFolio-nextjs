@@ -48,7 +48,7 @@ const CustomTabs = styled(Tabs)(() => {
     },
     "& .MuiTab-root": {
       color: "white",
-      fontSize: isMobile ? "1.5rem" : "1rem",
+      fontSize: isMobile ? "1.2rem" : "1rem",
       height: "28px",
       marginLeft: !isMobile && "14px",
       marginRight: isMobile && "1.5rem",
@@ -102,6 +102,10 @@ const Sidebar = ({
         onChange={(e, v) => {
           handleChange(v); // Invoke handleChange
           handleClose(); // Invoke handleClose
+        }}
+        sx={{
+          flex: 0.5,
+          marginTop: '1rem'
         }}
       >
         {tabs.map(({ key, value, Icon }) => (
