@@ -29,14 +29,14 @@ const ResumeDownload = ({ isMobile }: { isMobile: boolean }) => {
         color="inherit"
         onClick={handleDownload}
         style={{
-          position: 'fixed',
+          position: 'inherit',
           bottom: '20px',
           right: '20px',
           zIndex: 1000,
         }}
         className="bg-secondary hover:bg-secondary-dark text-white flex font-bold py-2 px-4 rounded transition-all duration-300 shadow-sm focus:outline-none focus:shadow-outline"
-
       >
+        {!isMobile && <p className="text-white mr-2">Resume</p>}
         <CloudDownloadIcon />
       </div>
   );

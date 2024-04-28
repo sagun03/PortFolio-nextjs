@@ -218,7 +218,7 @@ const NavBar = () => {
                 padding: "0px 14px",
               }}
             >
-              <Avatar alt="sagun pic" src="/pic.jpg" sx={{ ml: 2 }} />
+              {/* <Avatar alt="sagun pic" src="/pic.jpg" sx={{ ml: 2 }} /> */}
               <ResumeDownload isMobile={isMobile} />
             </Box>
           </Toolbar>
