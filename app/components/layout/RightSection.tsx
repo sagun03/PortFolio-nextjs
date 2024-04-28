@@ -8,7 +8,7 @@ const RightSection = () => {
     isMobile = isMobileString ? JSON.parse(isMobileString) : false;
   }
   return (
-    <aside className="flex-custom1 sm:flex-none  sm:w-64 p-6 text-white bg-black ">
+    <aside className="flex-custom1 sm:flex-none  sm:w-64 p-6 text-white bg-black">
       <section className="py-1 sm:fixed sm:w-64 sm:h-full ">
         <div className="flex items-center flex-col sm:h-full">
           <div className="flex justify-center w-full sm:flex-col">

@@ -163,7 +163,7 @@ const NavBar = () => {
                 }}
               >
                 <IconButton
-                  color="inherit"
+                  sx={{color: "white"}}
                   aria-label="open drawer"
                   edge="start"
                   onClick={handleSidebarToggle}
@@ -204,7 +204,7 @@ const NavBar = () => {
                 </CustomTabs>
               )}
               {isMobile && (
-                <h2 className="text-2xl items-center text-center  border-b-2 font-semibold">
+                <h2 className="text-2xl items-center text-center text-white  border-b-2 font-semibold">
                   Sagun Saluja
                 </h2>
               )}
