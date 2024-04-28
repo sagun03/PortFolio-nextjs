@@ -11,13 +11,13 @@ const RightSection = () => {
     <aside className="flex-custom1 sm:flex-none  sm:w-64 p-6 text-white bg-black">
       <section className="py-1 sm:fixed sm:w-64 sm:h-full ">
         <div className="flex items-center flex-col sm:h-full">
-          <div className="flex justify-center w-full sm:flex-col">
+          <div className="flex justify-center items-center sm:items-start w-full sm:flex-col">
             <div className="relative">
               <FadeEffectWrapper>
                 <img
-                  src="/pic3.jpeg"
+                  src="/img2.jpg"
                   alt="Profile Circle"
-                  className="rounded-full w-36 max-h-28 sm:w-40 sm:max-h-40 md:w-52 md:max-h-52 lg:w-72 lg:max-h-72 drop-shadow-md"
+                  className="rounded-full object-cover w-36 max-h-28 sm:w-40 sm:max-h-40 md:w-52 md:max-h-52 lg:w-72 lg:max-h-72 drop-shadow-md"
                 />
               </FadeEffectWrapper>
             </div>
