@@ -44,14 +44,7 @@ body {
   border-radius: 5px;
 }
 
-.intro-scroll {
-  max-height: 30vh
-}
-.experience-scroll {
-  max-height: 40vh
-}
-
-@media (min-height: 850px) {
+@media (min-height: 650px) {
   .intro-scroll {
     max-height: 50vh
   }

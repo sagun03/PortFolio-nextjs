@@ -1,10 +1,12 @@
 "use client"
 const MidSection = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="flex-custom2 h-auto sm:m-6 sm:px-2">
+    <main className="flex-0 sm:m-6 sm:px-12  w-full">
       {children}
     </main>
   );
 };
 
 export default MidSection;
+
+

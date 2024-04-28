@@ -40,7 +40,7 @@ const Skills = () =>  {
           text={`Skillscape 🌟: The Artillery of Expertise 🚀`}
         />
       </p>
-      <div className="flex max-h-skills-scroll mt-8 flex gap-4 flex-wrap overflow-y-auto overscroll-auto">
+      <div className="flex max-h-skills-scroll mt-8 gap-4 flex-wrap">
         {skillsData.map((category, index) => (
           <div key={index} className="w-skills-container" ref={index === expanded[expanded.length - 1] ? accordionRef : null}>
             <FadeEffectWrapper duration={300}>

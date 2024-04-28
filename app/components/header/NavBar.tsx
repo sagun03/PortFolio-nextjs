@@ -148,7 +148,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="border-b border-gray-700 h-30">
+    <nav className="border-b border-gray-700 h-30 fixed z-10 w-full">
       {tabState.isLoading && <LinearDeterminate />}
       <CustomAppBar position="sticky" color="transparent">
         <Container maxWidth="xl">

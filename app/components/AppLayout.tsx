@@ -24,11 +24,11 @@ const AppLayout = ({ children }: AppLayoutProps) => {
     <>
       <RecoilRoot>
         {isDelay ? (
-          <></>
+          <Loader />
         ) : (
-          <div className="flex h-screen flex-col">
+          <div className="flex flex-col h-screen">
             <NavBar />
-            <main className="sm:flex-1 flex flex-col sm:flex-row">
+            <main className="flex-1 flex mt-14 flex-col sm:flex-row">
               <RightSection />
               <MidSection>{children}</MidSection>
             </main>
@@ -40,3 +40,4 @@ const AppLayout = ({ children }: AppLayoutProps) => {
 };
 
 export default memo(AppLayout);
+

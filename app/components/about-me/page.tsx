@@ -44,7 +44,7 @@ const AboutMe = () => {
             >
               <h2 className="text-xl font-semibold">Introduction</h2>
             </AccordionSummary>
-            <AccordionDetails className="bg-gray-900 mx-6  rounded-lg shadow-md sm:bg-inherit sm:mx-0 px-2 sm: p-x-">
+            <AccordionDetails className="bg-gray-900 mx-6  rounded-lg shadow-md sm:bg-inherit sm:mx-0 px-2 sm:px-6">
               <FadeEffectWrapper duration={1000}>
                 <section className="bg-gray-900 sm:h-auto  rounded-lg shadow-md py-6">
                   <IntroSection />
@@ -62,10 +62,10 @@ const AboutMe = () => {
             >
               <h2 className="text-xl font-semibold">Professional Experience</h2>
             </AccordionSummary>
-            <AccordionDetails className="max-h-experience-scroll">
+            <AccordionDetails className="bg-gray-900 mx-6  rounded-lg shadow-md sm:bg-inherit sm:mx-0 px-2 sm:px-6">
               <FadeEffectWrapper duration={1000}>
                 <section className="bg-gray-900 rounded-lg sm:h-full shadow-md py-6">
-                  <Experience />
+                  <Experience isSelected={expanded === "panel2"}/>
                 </section>
               </FadeEffectWrapper>
             </AccordionDetails>

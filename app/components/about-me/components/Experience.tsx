@@ -1,6 +1,22 @@
-const Experience = () => {
+import { useEffect, useRef } from "react";
+
+const Experience = ({isSelected}: {isSelected: boolean}) => {
+  const experienceRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (experienceRef.current && isSelected) {
+      window.scrollTo({
+        top: experienceRef.current.offsetTop,
+        behavior: 'smooth'
+      });    
+    }
+  }, [experienceRef, isSelected]);
+
   return (
-    <section className="px-4 sm:mb-2 experience-scroll flex-wrap sm:overflow-y-auto sm:overscroll-auto  text-gray-100">
+    <section
+      ref={experienceRef}
+      className="px-4 sm:mb-2 experience-scroll flex-wrap sm:overflow-y-auto sm:overscroll-auto  text-gray-100"
+    >
       <div className="mb-6 text-gray-100">
         <h3 className="text-base sm:text-lg font-sstrongibold mb-2">
           <span className="underline pb-2">

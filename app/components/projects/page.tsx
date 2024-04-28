@@ -30,7 +30,7 @@ const Projects = () => {
         {" "}
         <FadeEffectWrapper text={`Projects`} />
       </h2>
-      <div className=" sm:flex gap-4 mt-8 max-h-section-scroll flex-wrap overflow-y-auto overscroll-auto scroll-py-1">
+      <div className=" sm:flex gap-4 mt-8 max-h-section-scroll flex-wrap scroll-py-1">
         {projects.map((category, index) => (
           <div key={index} className="mb-2 mt-6">
             <FadeEffectWrapper duration={300}>
