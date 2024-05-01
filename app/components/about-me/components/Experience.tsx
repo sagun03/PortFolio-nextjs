@@ -1,21 +1,9 @@
 import { useEffect, useRef } from "react";
 
-const Experience = ({isSelected}: {isSelected: boolean}) => {
-  const experienceRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (experienceRef.current && isSelected) {
-      window.scrollTo({
-        top: experienceRef.current.offsetTop,
-        behavior: 'smooth'
-      });    
-    }
-  }, [experienceRef, isSelected]);
-
+const Experience = () => {
   return (
     <section
-      ref={experienceRef}
-      className="px-4 sm:mb-2 experience-scroll flex-wrap sm:overflow-y-auto sm:overscroll-auto  text-gray-100"
+      className="px-4 sm:mb-2  flex-wrap  text-gray-100"
     >
       <div className="mb-6 text-gray-100">
         <h3 className="text-base sm:text-lg font-sstrongibold mb-2">
@@ -26,13 +14,12 @@ const Experience = ({isSelected}: {isSelected: boolean}) => {
         </h3>
         <ul className="text-sm sm:text-base list-disc font-light list-outside p-2 px-4">
           <li>
-            Worked on MRV Homepage and Global Header Application (
-            <strong className="text-primary">Lowe&apos;s</strong>).
+          Played a pivotal role in boosting user experience and optimizing navigation efficiency by contributing to
+development of MRV Homepage and Global Header Application for a prominent retail client in the US
           </li>
           <li>
             Implemented What&apos;s New functionality suing{" "}
-            <strong className="text-primary">React</strong> , so that the
-            associates in stores can be up to date with the latest information.
+            <strong className="text-primary">React</strong> , ensuring store associates stay updated with latest information.
           </li>
           <li>
             Worked on Global header to include all the apps in a single
@@ -63,16 +50,21 @@ const Experience = ({isSelected}: {isSelected: boolean}) => {
         {/* Experience bullet points */}
         <ul className="list-disc text-sm sm:text-base font-light list-outside p-2 px-4">
           <li>
-            Worked on Plan And Buy Manager Application (
-            <strong className="text-primary">Dentsu UK</strong>).
+          Led development efforts, from inception to completion, of the Plan And Buy Manager Application for a
+prominent media client in the UK, focusing on performance optimization and elevating user experience.
+          
           </li>
           <li>
-            Developed and maintained responsive web applications using{" "}
-            <strong className="text-primary"> MERN Stack</strong>
+          Managed <strong className="text-primary">Bryntum Scheduler,</strong> ensuring seamless scheduling capabilities and improving operational
+efficiency.
           </li>
           <li>
-            Worked on{" "}
-            <strong className="text-primary">Bryntum Scheduler.</strong>
+          Successfully implemented routing within applications using React Router to enable seamless navigation and a better user experience.
+          </li>
+          <li>
+          Collaborated closely with UI/UX designers to implement design concepts, resulting in a 15%
+improvement in user satisfaction.
+            
           </li>
           <li>
             Wrote comprehensive unit and integration tests using JEST and RTL,
@@ -80,7 +72,8 @@ const Experience = ({isSelected}: {isSelected: boolean}) => {
             overall application stability by{" "}
             <strong className="text-primary">90%.</strong>
           </li>
-          <li>Created Microservices api using Express.js and Graphql.</li>
+          <li>Created Microservices API using Express.js and GraphQL, improving system scalability and reducing
+response time by 30%.</li>
         </ul>
       </div>
     </section>

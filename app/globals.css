@@ -43,7 +43,7 @@ body {
   background: #FFA68E;
   border-radius: 5px;
 }
-
+/* 
 @media (min-height: 650px) {
   .intro-scroll {
     max-height: 50vh
@@ -51,4 +51,4 @@ body {
   .experience-scroll {
     max-height: 50vh
   }
-}
+} */

@@ -13,18 +13,21 @@ const Skills = () =>  {
   const [expanded, setExpanded] = useState<number[]>(skillsData.map((_, index) => index)); 
   const accordionRef = useRef<HTMLDivElement | null>(null);
 
-  const handleChange = (panel: number) => (
-    event: React.SyntheticEvent,
-    isExpanded: boolean
-  ) => {
+  const handleChange = (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
     if (isExpanded) {
-      setExpanded((prevExpanded) => [...prevExpanded, panel]); // Expand the clicked panel
+      // If expanding, add the panel to the expanded array
+      setExpanded((prevExpanded) => [...prevExpanded, panel]);
     } else {
-      if (expanded.length > 1) {
-        setExpanded((prevExpanded) => prevExpanded.filter((item) => item !== panel)); // Collapse the clicked panel if more than one expanded
-      }
+      // If collapsing, remove the panel from the expanded array
+      setExpanded((prevExpanded) => prevExpanded.filter((item) => item !== panel));
     }
 
+    // If all panels are collapsed, open the first one
+    if (!isExpanded && expanded.length === 1) {
+      setExpanded([expanded[0] === 0 ? 1 : 0]);
+    }
+
+    // Automatically scroll to the expanded panel
     if (accordionRef.current && isExpanded) {
       accordionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }

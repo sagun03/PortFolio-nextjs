@@ -6,13 +6,21 @@ import Skills from "./components/skills/page";
 import Projects from "./components/projects/page";
 import ContactMe from "./components/contact/page";
 import { useMediaQuery } from "@mui/material";
+import { useEffect } from "react";
 
 const Tabs = () => {
+
   const tabState = useRecoilValue(tabsState);
   const isMobile = useMediaQuery("(max-width:650px)");
   if (typeof window !== 'undefined') {
     window.localStorage.setItem("isMobile", JSON.stringify(isMobile));
   }
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });    
+}, [tabState.activeTab]);
   switch(tabState.activeTab) {
     case 'about-me':
       return <AboutMe />

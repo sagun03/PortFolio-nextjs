@@ -5,7 +5,7 @@ import IconButton from "@mui/material/IconButton";
 const ResumeDownload = ({ isMobile }: { isMobile: boolean }) => {
   const handleDownload = async () => {
     try {
-      const resumeUrl = "/sagun_resume.pdf";
+      const resumeUrl = "/Sagun_Saluja_May_Resume.pdf";
       const response = await fetch(resumeUrl);
       if (!response.ok) {
         throw new Error("Failed to fetch resume");

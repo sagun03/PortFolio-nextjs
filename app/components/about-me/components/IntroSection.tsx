@@ -1,6 +1,6 @@
 const IntroSection = () => {
   return (
-    <section className="bg-gray-900 px-4 rounded-lg shadow-md sm:py-2 sm:px-4 mb-2 intro-scroll flex-wrap sm:overflow-y-auto sm:overscroll-auto">
+    <section className="bg-gray-900 px-4 rounded-lg shadow-md sm:py-2 sm:px-4 mb-2 flex-wrap ">
       <div className="text-lg"> 
         <p className="text-sm sm:text-base font-light text-gray-100">
           <span role="img" aria-label="Rocket">
@@ -21,7 +21,8 @@ const IntroSection = () => {
           <br />
           <br />
           🚀 At <strong className="text-primary">Nagarro</strong>, collaborating
-          on projects with <strong className="text-primary">Lowe&apos;s</strong>, a
+          on projects with <strong className="text-primary">leading retail client in
+US </strong>, a
           Fortune 50 giant, heightened my frontend expertise, shaping me into a
           more seasoned developer. The challenges and experiences I&apos;ve
           encountered have been instrumental in empowering me to excel in React
@@ -29,7 +30,8 @@ const IntroSection = () => {
           <br />
           <br />
           🌟 Currently enrolled in a comprehensive{" "}
-          <strong className="text-primary">Full Stack Development</strong>{" "}
+          <strong className="text-primary">Full Stack Development</strong>,{" "}
+          a Post Graduate Diploma
           course in Canada, I&apos;m enriching my skill set and have honed my
           expertise in backend technologies like MongoDB, Node.js, and Python.
           Meanwhile, I&apos;ve strongbarked on exhilarating journeys into{" "}
