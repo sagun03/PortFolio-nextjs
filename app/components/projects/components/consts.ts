@@ -6,7 +6,7 @@ export const projects = [
       {
         name: "Ecommerce Website",
         github: "https://github.com/sagun03/react-shopping-ui",
-        live: "https://jktotalwashingsolutions.netlify.app/",
+        live: "https://thejkproducts.com/",
         tech: ["React", "Swiper JS", "Firebase", "Redux"],
         desc: "One Stop Solution for all HouseHould cleaning and Washing",
         img: "/jk.png",
