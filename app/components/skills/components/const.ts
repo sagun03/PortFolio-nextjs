@@ -5,28 +5,28 @@ export const skillsData = [
     skills: [
       {
         name: "React",
-        rating: 4.5,
+        rating: 4,
         iconUrl: "/react1.png",
         animate: "animate-spin",
         desc: "Turning code into pixels and pixels into magic! ✨",
       },
       {
         name: "JavaScript",
-        rating: 4.5,
+        rating: 4,
         iconUrl: "/js.png",
         animate: "animate-pulse",
         desc: "Making the web dance with code, one line at a time! 💃✨",
       },
       {
         name: "TypeScript",
-        rating: 4,
+        rating: 3,
         iconUrl: "/ts.png",
         animate: "animate-pulse",
         desc: "Because life's too short for unpredictable code! 🚀🧩",
       },
       {
         name: "Python",
-        rating: 3.5,
+        rating: 3,
         iconUrl: "/py.png",
         animate: "animate-spin",
         desc: "Unraveling the mysteries of coding with the elegance of a snake 🐍🔍",
@@ -52,42 +52,42 @@ export const skillsData = [
     skills: [
       {
         name: "Recoil",
-        rating: 4.5,
+        rating: 3,
         iconUrl: "/recoil.jpeg",
         animate: "animate-spin",
         desc: "Making state management as easy as snapping your fingers! ✨💥",
       },
       {
         name: "Material UI",
-        rating: 4.5,
+        rating: 3.5,
         iconUrl: "/mui.png",
         animate: "animate-pulse",
         desc: "Where design meets simplicity and beauty! 🎨✨",
       },
       {
         name: "Redux",
-        rating: 4,
+        rating: 3.5,
         iconUrl: "/redux.png",
         animate: "animate-spin",
         desc: "Making state management a breeze! 🔄🚀",
       },
       {
         name: "Graph QL",
-        rating: 4,
+        rating: 3,
         iconUrl: "/Gql.png",
         animate: "animate-spin",
         desc: "Uniting queries and front-end like never before! 🌐✨",
       },
       {
         name: "TailWind CSS",
-        rating: 4,
+        rating: 3.5,
         iconUrl: "/Tailwind.png",
         animate: "animate-pulse",
         desc: "Spinning the web with utility-driven designs! 💻🎨",
       },
       {
         name: "Jest",
-        rating: 4,
+        rating: 3.5,
         iconUrl: "/jest.png",
         animate: "animate-pulse",
         desc: "Making testing as fun as playing hide and seek with bugs! 🐞🎭",
@@ -108,7 +108,7 @@ export const skillsData = [
       },
       {
         name: "Tans Stack",
-        rating: 3.5,
+        rating: 4,
         animate: "animate-pulse",
         desc: "Making table management as easy as pie! 📊🥧",
       },
@@ -120,7 +120,7 @@ export const skillsData = [
     skills: [
       {
         name: "HTML5",
-        rating: 4.5,
+        rating: 4,
         iconUrl: "/html.png",
         animate: "animate-pulse",
         desc: "The building blocks of the web 🌐✨",
@@ -131,13 +131,6 @@ export const skillsData = [
         iconUrl: "/css.png",
         animate: "animate-pulse",
         desc: "Making the web stylish, one element at a time! 💅🎨",
-      },
-      {
-        name: "SCSS",
-        rating: 3.5,
-        iconUrl: "/sass.png",
-        animate: "animate-pulse",
-        desc: "Taking CSS to the next level with superpowers! 🚀🎨",
       },
       {
         name: "BootStrap",
@@ -154,7 +147,7 @@ export const skillsData = [
     skills: [
       {
         name: "MongoDB",
-        rating: 3.5,
+        rating: 3,
         iconUrl: "/mongodb.png",
         animate: "animate-pulse",
         desc: "Where data meets flexibility and scalability! 🍃🔍",
