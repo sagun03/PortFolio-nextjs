@@ -28,7 +28,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
         ) : (
           <div className="flex flex-col h-screen">
             <NavBar />
-            <main className="flex-1 flex mt-14 flex-col sm:flex-row">
+            <main className="flex-1 flex mt-14 flex-col sm:flex-row bg-black">
               <RightSection />
               <MidSection>{children}</MidSection>
             </main>
