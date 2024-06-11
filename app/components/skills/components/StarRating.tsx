@@ -11,7 +11,7 @@ const Rating = ({ rating, className }: {rating: number, className?: string}) => 
     } else if (index === filledStars && hasHalfStar) {
       return <StarHalf key={index} className="star text-rating" />;
     } else {
-      return <StarBorder key={index} className="star" />;
+      return <StarBorder key={index} className="star text-rating" />;
     }
   });
 
