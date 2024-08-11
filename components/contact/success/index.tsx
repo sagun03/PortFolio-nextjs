@@ -23,7 +23,7 @@ const ThankYou = ({
           sx={{ position: "absolute", top: 0, right: 0, m: 1 }}
           onClick={() => {
             setIsOpen(false);
-            setFormData({ name: "", email: ""});
+            setFormData({ name: "", email: "", message: "" });
           }}
         >
           <CloseIcon />
@@ -40,7 +40,7 @@ const ThankYou = ({
             className="bg-secondary text-white font-semibold px-6 py-3 rounded-lg hover:bg-secondary-dark transition-all duration-300 focus:outline-none transform hover:scale-110"
             onClick={() => {
               setIsOpen(false);
-              setFormData({ name: "", email: ""});
+              setFormData({ name: "", email: "", message: "" });
             }}
             >
             Go Back Home

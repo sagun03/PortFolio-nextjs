@@ -1,8 +1,8 @@
 import { atom } from "recoil";
 
-export const contactFormState = atom<{ name: string; email: string; }>({
+export const contactFormState = atom<{ name: string; email: string; message: string; }>({
   key: "contactFormState",
-  default: { name: "", email: "" },
+  default: { name: "", email: "", message: "" },
 });
 
 export const formSubmitted = atom<{ formSubmitted: boolean }>({
