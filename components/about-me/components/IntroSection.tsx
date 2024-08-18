@@ -1,8 +1,8 @@
 const IntroSection = () => {
   return (
-    <section className="bg-gray-900 px-4 rounded-lg shadow-md sm:py-2 sm:px-4 mb-2 flex-wrap ">
+    <section className="bg-gray-900 px-2 rounded-lg shadow-md sm:py-2 sm:px-4 mb-2 flex-wrap ">
       <div className="text-lg"> 
-        <p className="text-sm sm:text-base font-light text-gray-100">
+        <p className="text-sm sm:text-base text-gray-100">
           <span role="img" aria-label="Rocket">
             🚀
           </span>{" "}
