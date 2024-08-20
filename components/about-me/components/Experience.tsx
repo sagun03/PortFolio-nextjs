@@ -12,7 +12,7 @@ const Experience = () => {
         </h3>
         <ul className="text-sm sm:text-base list-disc list-outside p-2 px-4">
           <li>
-          Actively participated in the development of the MRV Homepage and Global Header Application for a prominent US retail client, improving feature functionality and reinforcing the application&apos;s overall robustness.
+          Played a pivotal role in creation of the MRV Homepage and Global Header Application for a leading US retail client, refining feature functionality and strengthening the application&apos;s overall stability.
           </li>
           <li>
           Accomplished <strong className="text-primary">What&apos;s New</strong> functionality leveraging React for store associates, reducing information dissemination time by <strong className="text-primary">15%</strong> and increasing decision-making capabilities
