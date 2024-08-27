@@ -15,16 +15,16 @@ const Experience = () => {
           Played a pivotal role in creation of the MRV Homepage and Global Header Application for a leading US retail client, refining feature functionality and strengthening the application&apos;s overall stability.
           </li>
           <li>
-          Accomplished <strong className="text-primary">What&apos;s New</strong> functionality leveraging React for store associates, reducing information dissemination time by <strong className="text-primary">15%</strong> and increasing decision-making capabilities
+          Enhanced decision-making capabilities by <strong className="text-primary">40%</strong> through React-based <strong className="text-primary">What&apos;s New</strong> functionality for store associates.
           </li>
           <li>
-          Integrated all applications into the Global Header with micro frontend concepts, reducing navigation time by <strong className="text-primary">by 5-10 sec</strong> seconds across store applications and improving operational efficiency.
+          Implemented <strong className="text-primary">micro frontend concepts</strong> to integrate all applications into the Global Header, resulting in a <strong className="text-primary">5 min</strong> reduction in navigation time and improved operational efficiency.
           </li>
           <li>
-          Took ownership in the implementation of <strong className="text-primary">TypeScript</strong>, significantly enhancing codebase maintainability, improving team collaboration, and boosting code quality, leading to a 25% reduction in bug incidents.
+          Led the successful implementation of <strong className="text-primary">TypeScript</strong>, resulting in a <strong className="text-primary">35% reduction</strong> in bug incidents, enhancing codebase maintainability.
           </li>
           <li>
-          Adhered to <strong className="text-primary">Agile ceremonies</strong>, conducted thorough code reviews, and tested the E2E application flow leveraging <strong className="text-primary">Cypress</strong>, resulting in a 30% improvement in test coverage and boosted overall application reliability.
+          Improved test coverage from <strong className="text-primary">40% to 85%</strong> using <strong className="text-primary">Cypress</strong>, ensuring comprehensive testing and higher quality application.
           </li>
         </ul>
       </div>
@@ -36,19 +36,18 @@ const Experience = () => {
           </span>
           , India (Jan 2019 - Sep 2021)
         </h3>
-        {/* Experience bullet points */}
         <ul className="list-disc text-sm sm:text-base font-light list-outside p-2 px-4">
           <li>
           Played a key role in the early development of the Plan And Buy Manager Application for a leading media client in the UK, with a strong focus on performance optimization and elevating the user experience.
           </li>
           <li>
-          Managed <strong className="text-primary">Bryntum Scheduler</strong> to ensure seamless scheduling capabilities and enhance operational efficiency in adding events to different advertising channels.
+          Enhanced Bryntum Scheduler <strong className="text-primary">performance by 60%</strong>, refining scheduling capabilities and decreasing operational time, leading to improved productivity.
           </li>
           <li>
-          Executed routing within applications using <strong className="text-primary">React Router</strong> and collaborated closely with UI/UX designers to achieve seamless navigation and enhance user experience, resulting in a 50% improvement in user satisfaction.
+          Collaborated with UI/UX designers to optimize application routing using <strong className="text-primary">React Router</strong>, leading to a <strong className="text-primary">80%</strong> increase in user satisfaction and improved user experience.
           </li>
           <li>
-          Created Micro-Services APIs and conducted comprehensive unit and integration tests with <strong className="text-primary">JEST and RTL</strong>J, resulting in a 25% reduction in bugs and a 90% improvement in overall application stability
+          Optimized database queries and implemented caching strategies, resulting in a reduction in API response times by up to <strong className="text-primary">25%</strong> and enhancing overall application performance.
           </li>
         </ul>
       </div>
